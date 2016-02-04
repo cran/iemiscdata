@@ -1,0 +1,13 @@
+citHeader("To cite iemiscdata in publications use:")
+
+citEntry(entry = "Manual",
+  title        = "Irucka Embry's miscellaneous data collection",
+  author       = personList(as.person("Irucka Embry")),
+  year         = "2016",
+  url          = "https://gitlab.com/iembry/iemiscdata/",
+
+  textVersion  =
+  paste("Irucka Embry (2016).",
+        "Irucka Embry's miscellaneous data collection.",
+        "URL https://gitlab.com/iembry/iemiscdata/.")
+)
