@@ -1,0 +1,37 @@
+---
+title: "PDF Version of Manning's n Tables"
+author: "Irucka Embry"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# View PDF version of the tables
+If you would like to view the PDF tables, then use the code below that matches your operating system:
+
+Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
+```R
+# under Unix type operating sytem
+pdf <- getOption("pdfviewer", default = "")
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+system2(pdf, args = f)
+```
+
+
+Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
+```R
+# under MS Windows
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+shell.exec(normalizePath(f))
+```
+
+
+Source: [Opening PDF within R studio using file.show - Stack Overflow -- rensa](http://stackoverflow.com/questions/33791493/opening-pdf-within-r-studio-using-file-show/33791818)
+```R
+# under OS X
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+system2("open", args = f, wait = FALSE)
+```
