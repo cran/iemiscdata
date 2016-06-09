@@ -4,13 +4,19 @@ author: "Irucka Embry"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Viewing Manning's n Tables as a PDF}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
+<br />
+<br />
+
 # View PDF version of the tables
+
 If you would like to view the PDF tables, then use the code below that matches your operating system:
+
+<br />
 
 Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
 ```R

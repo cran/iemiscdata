@@ -1,16 +1,4 @@
----
-title: "Examples Using Manning's n"
-author: "Irucka Embry"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Manning's n Examples}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-# Examples
-```{r}
+## ------------------------------------------------------------------------
 library(iemiscdata)
 
 # Use grep to find the row number matching the given description
@@ -77,4 +65,4 @@ n <- nchannel[nlocation, 3] # 3 for column 3 - Normal n
 
 compute_profile(0.001, n, 250, 2.7, 1.486, 32.2, 100, 0, stepdist = 50,
 totaldist = 3000)
-```
+

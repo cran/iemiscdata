@@ -12,7 +12,7 @@
 
 <meta name="author" content="Irucka Embry" />
 
-<meta name="date" content="2016-05-30" />
+<meta name="date" content="2016-06-08" />
 
 <title>Examples Using Manning’s n</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Examples Using Manning’s n</h1>
 <h4 class="author"><em>Irucka Embry</em></h4>
-<h4 class="date"><em>2016-05-30</em></h4>
+<h4 class="date"><em>2016-06-08</em></h4>
 
 
 
@@ -142,6 +142,36 @@ n &lt;-<span class="st"> </span>nchannel[nlocation, <span class="dv">3</span>] <
 
 <span class="kw">compute_profile</span>(<span class="fl">0.001</span>, n, <span class="dv">250</span>, <span class="fl">2.7</span>, <span class="fl">1.486</span>, <span class="fl">32.2</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dt">stepdist =</span> <span class="dv">50</span>,
 <span class="dt">totaldist =</span> <span class="dv">3000</span>)</code></pre></div>
+<pre><code>## M1 profile specified. Computing upstream profile</code></pre>
+<pre><code>## Simulation type:
+##   Gradually-varied flow
+## 
+## Call:
+##   compute_profile(So = 0.001, n = n, Q = 250, y0 = 2.7, Cm = 1.486, 
+##     g = 32.2, B = 100, SS = 0, stepdist = 50, totaldist = 3000)
+## 
+## 
+## Channel geometry:
+##   So:0.001
+##   n :0.018
+##   B :100
+##   SS:0
+## 
+## Model specification:
+##   delta.x       :50
+##   channel.length:3000
+##   normal.depth  :0.982
+##   critical.depth:0.579
+## 
+## Data:
+##   x : num [1:61] 0 -50 -100 -150 -200 -250 -300 -350 -400 -450 ...
+##   z : num [1:61] 0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 ...
+##   y : num [1:61] 2.7 2.65 2.6 2.55 2.51 ...
+##   v : num [1:61] 0.926 0.943 0.961 0.979 0.998 ...
+##   A : num [1:61] 270 265 260 255 251 ...
+##   Sf: num [1:61] 3.59e-05 3.81e-05 4.05e-05 4.30e-05 4.58e-05 ...
+##   E : num [1:61] 2.71 2.72 2.72 2.72 2.72 ...
+##   Fr: num [1:61] 0.0993 0.102 0.1049 0.1079 0.1111 ...</code></pre>
 </div>
 
 

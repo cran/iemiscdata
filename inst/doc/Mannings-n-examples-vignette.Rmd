@@ -4,13 +4,13 @@ author: "Irucka Embry"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Manning's n Examples}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 # Examples
-```R
+```{r}
 library(iemiscdata)
 
 # Use grep to find the row number matching the given description
