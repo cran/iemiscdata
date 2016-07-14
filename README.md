@@ -1,6 +1,6 @@
 # iemiscdata
 
-R data package with miscellaneous data sets [Engineering Economics, Environmental/Water Resources Engineering, Nuclear Accidents, US Environmental Protection Agency (EPA) RadNet readings before and after the Fukushima Daiichi & Daini nuclear power plant accidents/explosions, US Presidential Elections, etc.]. Look for all of these data sets and more in future releases.
+R data package with miscellaneous data sets [Engineering Economics, Environmental/Water Resources Engineering, US Presidential Elections].
 
 
 # Installation
@@ -11,101 +11,91 @@ install.packages("iemiscdata")
 
 
 # Package Contents
-This package currently contains three datasets:
+This package currently contains 26 datasets:
 
 * `nchannel`: Manning's n for Channels (Chow, 1959)
 * `npartfull`: Manning's n for Closed Conduits Flowing Partly Full (Chow, 1959)
 * `nmetalpipe`: Manning's n for Corrugated Metal Pipe (AISI, 1980)
+* `r* (3 data sets)`: Nominal Interest Rate Tables (Engineering Economics)
+* `i* (19 data sets)`: Effective Interest Rate Tables (Engineering Economics)
+* `pres_elect1`: US Presidential Elections (Wikipedia)
 
-The Manning's n data sets are from [FishXing Version 3.0 Beta (2006)](http://www.fsl.orst.edu/geowater/FX3/help/8_Hydraulic_Reference/Mannings_n_Tables.htm). The html tables are also present in PDF format in this package.
 
 
-# View PDF version of the tables
-If you would like to view the PDF tables, then use the code below that matches your operating system:
-
-Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
+# Examples (see more examples in the vignettes and in the function descriptions)
 ```R
-# under Unix type operating sytem
-pdf <- getOption("pdfviewer", default = "")
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
-system2(pdf, args = f)
-```
+library(install.load)
+load_package("iemisc", "iemiscdata", "data.table", "dplyr", "rpivotTable") # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
 
-
-Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
-```R
-# under MS Windows
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
-shell.exec(normalizePath(f))
-```
-
-
-Source: [Opening PDF within R studio using file.show - Stack Overflow -- rensa](http://stackoverflow.com/questions/33791493/opening-pdf-within-r-studio-using-file-show/33791818)
-```R
-# under OS X
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
-system2("open", args = f, wait = FALSE)
-```
-
-
-# Examples
-```R
-library(iemiscdata)
-
-# Use grep to find the row number matching the given description
-# Use nchannel$"Type of Channel and Description" to select the column to search through
-# Use nchannel[nlocation, 4] to select the row number from nlocation and column 4
-# Similar steps are performed for each of these examples
 
 # Example 1
-# What is the maximum Manning's n value for 1) Natural streams - minor streams (top width at floodstage < 100 ft), 2) Mountain
-# streams, no vegetation in channel, banks usually steep, trees and brush along banks submerged at high stages and 3) bottom:
-# gravels, cobbles, and few boulders?
-data(nchannel)
+# Future value given present value
+FgivenP(8330, 6, 10, frequency = "annual") # the interest rate is 10%
 
-nlocation <- grep("bottom: gravels, cobbles, and few boulders", nchannel$"Type of Channel and Description")
+# or
 
-n <- nchannel[nlocation, 4] # 4 for column 4 - Maximum n
+P <- 8330
+n <- 6
+P * i10[n, which(names(i10) == "F/P"), with = FALSE][[1]]
+# use i10 for the 10 percent effective interest table values
+# n is the row number
+# which(names(i10) == "F/P"), with = FALSE provides the column number in a data.table
+# [[1]] provides the value of the vector
 
 
 
 # Example 2
-# What is the minimum Manning's n value for 1) Closed Conduits Flowing Partly
-# Full, 2) Wood and 3) Stave?
-data(npartfull)
+# Future value given annual value with continuously compounded interest
+FgivenAcont(4500, 5, 20) # 20% interest
 
-nlocation <- grep("Stave",
-npartfull$"Type of Conduit and Description")
-n <- npartfull[nlocation, 2] # 2 for column 2 - Minimum n
+# or
+
+F <- 4500
+n <- 5
+F * r20[n, which(names(r20) == "F/A"), with = FALSE][[1]]
+# use r20 for the 20 percent nominal interest table values
+# n is the row number
+# which(names(r20) == "F/A"), with = FALSE provides the column number in this data.table
+# [[1]] provides the value of the vector
+
 
 
 # Example 3
-# What is the Manning's n value for 1) Corrugated Metal Pipe, 2) Corrugations 6x2 inches and 3) 60" diameter?
-data(nmetalpipe)
+# View the Manning's n data sets
 
-nnear <- grep("Corrugations 6x2 inches", nmetalpipe$"Type of Pipe, Diameter and Corrugation Dimension")
-# nnear is the row number matching the description
+View(nchannel)
 
-nlocation <- nlocation[which(grep("60\"\" diameter", nmetalpipe$"Type of Pipe, Diameter and Corrugation Dimension") > nnear)]
-# which provides all locations matching the description > nnear gives the row number(s) greater than nnear since the requested
-# diameter is in the section located after nnear
-n <- nmetalpipe[nlocation, 2] # 2 for column 2 - n
+View(nmetalpipe)
+
+View(npartfull)
+
 
 
 # Example 4
-# Example to compute the "gradually-varied flow profile of a prismatic channel" with these channel conditions used to find
-# Manning's n (normal): 1) Natural streams - minor streams (top width at floodstage < 100 ft), 2) Excavated or Dredged
-# Channels, 3) Earth, straight, and uniform, & 4) clean, recently completed.
-# Quote source: rivr's compute_profile
+# View the Wikipedia US Presidental Election Results Table
 
-# Using the data for the M1 profile example in rivr's compute_profile, except for the value of n
+View(pres_elect1)
 
-library(rivr)
-# to find the channel condition
-nlocation <- grep("clean, recently completed", nchannel$"Type of Channel and Description")
-# use grep to find the n's row number
 
-n <- nchannel[nlocation, 3] # 3 for column 3 - Normal n
+# The number of elections won by the Winners of the Presidential Election using dplyr's count along with piping
+pres_elect1 %>% count(Winner)
 
-compute_profile(0.001, n, 250, 2.7, 1.486, 32.2, 100, 0, stepdist = 50, totaldist = 3000)
+
+# view the interactive pivot table of the whole table
+rpivotTable(pres_elect1)
+
+
+# view the interactive pivot table using the Winner Party column
+rpivotTable(pres_elect1, cols = "Winner Party")
 ```
+
+
+
+# Disclaimer
+
+This software is provided "AS IS." See the GPL License for more information.
+
+
+# License
+
+iemiscdata is distributed under the GPL-3 (or later) license, as stated in the DESCRIPTION file. For more info, see the [GNU General Public License (GPL) page](https://gnu.org/licenses/gpl.html).

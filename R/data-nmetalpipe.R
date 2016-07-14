@@ -1,11 +1,11 @@
 #' Manning's n for Corrugated Metal Pipe
 #'
-#' A data.frame containing the type of channel and description along with the
+#' A table containing the type of channel and description along with the
 #' minimum, normal, and maximum value of n, if it exists. n is the "Gauckler-
 #' Manning coefficient (commonly called Manning's n)" and it's dimensionless.
 #' Source: Manning formula.
 #'
-#' @format A data frame with 25 rows and 2 variables:
+#' @format A data.table data frame with 25 rows and 2 variables:
 #' \describe{
 #' \item{Type of Pipe and Diameter and Corrugation Dimension}{Name of the type
 #'    of conduit and any descriptive information}

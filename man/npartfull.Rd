@@ -4,7 +4,7 @@
 \name{npartfull}
 \alias{npartfull}
 \title{Manning's n for Closed Conduits Flowing Partly Full}
-\format{A data frame with 38 rows and 4 variables:
+\format{A data.table data frame with 38 rows and 4 variables:
 \describe{
 \item{Type of Conduit and Description}{Type of conduit name and any
 descriptive information}

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Irucka Embry" />
 
-<meta name="date" content="2016-06-08" />
+<meta name="date" content="2016-07-13" />
 
 <title>Examples Using Manning’s n</title>
 
@@ -70,78 +70,90 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Examples Using Manning’s n</h1>
 <h4 class="author"><em>Irucka Embry</em></h4>
-<h4 class="date"><em>2016-06-08</em></h4>
+<h4 class="date"><em>2016-07-13</em></h4>
 
 
 
 <div id="examples" class="section level1">
 <h1>Examples</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(iemiscdata)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(install.load)
+<span class="kw">load_package</span>(<span class="st">&quot;iemiscdata&quot;</span>, <span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;rivr&quot;</span>) <span class="co"># load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)</span>
+
+<span class="co"># The examples make more sense if you have familiarized yourself with the nchannel, npartfull, and nmetalpipe tables. There are instructions to view the tables, as a .pdf, in the View-PDF-table-vignette.</span>
+
 
 <span class="co"># Use grep to find the row number matching the given description</span>
-<span class="co"># Use nchannel$&quot;Type of Channel and Description&quot; to select the column to search</span>
-<span class="co"># through</span>
-<span class="co"># Use nchannel[nlocation, 4] to select the row number from nlocation and</span>
-<span class="co"># column 4</span>
+<span class="co"># Use nchannel$&quot;Type of Channel and Description&quot; to select the column to search through</span>
+<span class="co"># Use nchannel[nlocation, 4] to select the row number from nlocation and column 4</span>
 <span class="co"># Similar steps are performed for each of these examples</span>
 
+
 <span class="co"># Example 1</span>
-<span class="co"># What is the maximum Manning's n value for 1) Natural streams - minor streams</span>
-<span class="co"># (top width at floodstage &lt; 100 ft), 2) Mountain streams, no vegetation</span>
-<span class="co"># in channel, banks usually steep, trees and brush along banks submerged at</span>
-<span class="co"># high stages and 3) bottom: gravels, cobbles, and few boulders?</span>
+<span class="co"># What is the maximum Manning's n value for a channel that has the following classification: &quot;Natural streams - minor streams (top width at floodstage &lt; 100 ft), Mountain streams, no vegetation in channel, banks usually steep, trees and brush along banks submerged at high stages and bottom: gravels, cobbles, and few boulders&quot;?</span>
+<span class="co"># The 1st heading is &quot;Manning's n for Channels&quot;</span>
+<span class="co"># The 2nd heading is &quot;Natural streams - minor streams (top width at floodstage &lt; 100 ft)&quot;</span>
+<span class="co"># The 3rd heading is &quot;Mountain streams, no vegetation in channel, banks usually steep, trees and brush along banks submerged at high stages&quot;</span>
+<span class="co"># The 4th heading is &quot;bottom: gravels, cobbles, and few boulders&quot;</span>
+
 <span class="kw">data</span>(nchannel)
 
-nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;bottom: gravels, cobbles, and few boulders&quot;</span>,
-nchannel$<span class="st">&quot;Type of Channel and Description&quot;</span>)
+nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;bottom: gravels, cobbles, and few boulders&quot;</span>, nchannel$<span class="st">&quot;Type of Channel and Description&quot;</span>)
+
 n &lt;-<span class="st"> </span>nchannel[nlocation, <span class="dv">4</span>] <span class="co"># 4 for column 4 - Maximum n</span>
 
 
+
 <span class="co"># Example 2</span>
-<span class="co"># What is the minimum Manning's n value for 1) Closed Conduits Flowing Partly</span>
-<span class="co"># Full, 2) Wood and 3) Stave?</span>
+<span class="co"># What is the minimum Manning's n value for a channel that has the following classification: &quot;Closed Conduits Flowing Partly Full, Wood and Stave&quot;?</span>
+<span class="co"># The 1st heading is &quot;Manning's n for Closed Conduits Flowing Partly Full&quot;</span>
+<span class="co"># The 2nd heading is &quot;Wood&quot;</span>
+<span class="co"># The 3rd heading is &quot;Stave&quot;</span>
+
 <span class="kw">data</span>(npartfull)
 
-nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;Stave&quot;</span>,
-npartfull$<span class="st">&quot;Type of Conduit and Description&quot;</span>)
+nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;Stave&quot;</span>, npartfull$<span class="st">&quot;Type of Conduit and Description&quot;</span>)
+
 n &lt;-<span class="st"> </span>npartfull[nlocation, <span class="dv">2</span>] <span class="co"># 2 for column 2 - Minimum n</span>
 
 
+
 <span class="co"># Example 3</span>
-<span class="co"># What is the Manning's n value for 1) Corrugated Metal Pipe,</span>
-<span class="co"># 2) Corrugations 6x2 inches and 3) 60&quot; diameter?</span>
+<span class="co"># What is the Manning's n value for a channel that has the following classification: &quot;Corrugated Metal Pipe, Corrugations 6x2 inches and 60&quot; diameter&quot;?</span>
+<span class="co"># The 1st heading is &quot;Manning's n for Corrugated Metal Pipe&quot;</span>
+<span class="co"># The 2nd heading is &quot;Corrugations 6x2 inches&quot;</span>
+<span class="co"># The 3rd heading is &quot;60&quot; diameter&quot;</span>
+
 <span class="kw">data</span>(nmetalpipe)
-nnear &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;Corrugations 6x2 inches&quot;</span>,
-nmetalpipe$<span class="st">&quot;Type of Pipe, Diameter and Corrugation Dimension&quot;</span>)
+
+nnear &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;Corrugations 6x2 inches&quot;</span>, nmetalpipe$<span class="st">&quot;Type of Pipe, Diameter and Corrugation Dimension&quot;</span>)
 <span class="co"># nnear is the row number matching the description</span>
-nlocation &lt;-<span class="st"> </span>nlocation[<span class="kw">which</span>(<span class="kw">grep</span>(<span class="st">&quot;60</span><span class="ch">\&quot;\&quot;</span><span class="st"> diameter&quot;</span>,
-nmetalpipe$<span class="st">&quot;Type of Pipe, Diameter and Corrugation Dimension&quot;</span>) &gt;<span class="st"> </span>nnear)]
-<span class="co"># which provides all locations matching the description</span>
-<span class="co"># &gt; nnear gives the row number(s) greater than nnear since the requested</span>
-<span class="co"># diameter is in the section located after nnear</span>
+
+nlocation &lt;-<span class="st"> </span>nlocation[<span class="kw">which</span>(<span class="kw">grep</span>(<span class="st">&quot;60</span><span class="ch">\&quot;\&quot;</span><span class="st"> diameter&quot;</span>, nmetalpipe$<span class="st">&quot;Type of Pipe, Diameter and Corrugation Dimension&quot;</span>) &gt;<span class="st"> </span>nnear)]
+<span class="co"># which provides all locations matching the description &gt; nnear gives the row number(s) greater than nnear since the requested diameter is in the section located after nnear</span>
+
 n &lt;-<span class="st"> </span>nmetalpipe[nlocation, <span class="dv">2</span>] <span class="co"># 2 for column 2 - n</span>
 
 
+
 <span class="co"># Example 4</span>
-<span class="co"># Example to compute the &quot;gradually-varied flow profile of a prismatic</span>
-<span class="co"># channel&quot; with these channel conditions used to find Manning's n (normal):</span>
-<span class="co"># 1) Natural streams - minor streams (top width at floodstage &lt; 100 ft),</span>
-<span class="co"># 2) Excavated or Dredged Channels, 3) Earth, straight, and uniform, &amp;</span>
-<span class="co"># 4) clean, recently completed.</span>
+<span class="co"># Example to compute the &quot;gradually-varied flow profile of a prismatic channel&quot; with these channel conditions used to find Manning's n (normal): &quot;Natural streams - minor streams (top width at floodstage &lt; 100 ft), Excavated or Dredged Channels, Earth, straight, and uniform, &amp; clean, recently completed&quot;.</span>
 <span class="co"># Quote source: rivr's compute_profile</span>
 
-<span class="co"># Using the data for the M1 profile example in rivr's compute_profile, except</span>
-<span class="co"># for the value of n</span>
+<span class="co"># The 1st heading is &quot;Manning's n for Channels&quot;</span>
+<span class="co"># The 2nd heading is &quot;Natural streams - minor streams (top width at floodstage &lt; 100 ft)&quot;</span>
+<span class="co"># The 3rd heading is &quot;Excavated or Dredged Channels&quot;</span>
+<span class="co"># The 4th heading is &quot;Earth, straight, and uniform&quot;</span>
+<span class="co"># The 5th heading is &quot;clean, recently completed&quot;</span>
 
-<span class="kw">library</span>(rivr)
-<span class="co"># to find the channel condition</span>
-nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;clean, recently completed&quot;</span>,
-nchannel$<span class="st">&quot;Type of Channel and Description&quot;</span>)
+
+<span class="co"># Using the data for the M1 profile example in rivr's compute_profile, except for the value of n to find the channel condition</span>
+
+nlocation &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;clean, recently completed&quot;</span>, nchannel$<span class="st">&quot;Type of Channel and Description&quot;</span>)
 <span class="co"># use grep to find the n's row number</span>
+
 n &lt;-<span class="st"> </span>nchannel[nlocation, <span class="dv">3</span>] <span class="co"># 3 for column 3 - Normal n</span>
 
-<span class="kw">compute_profile</span>(<span class="fl">0.001</span>, n, <span class="dv">250</span>, <span class="fl">2.7</span>, <span class="fl">1.486</span>, <span class="fl">32.2</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dt">stepdist =</span> <span class="dv">50</span>,
-<span class="dt">totaldist =</span> <span class="dv">3000</span>)</code></pre></div>
+<span class="kw">compute_profile</span>(<span class="fl">0.001</span>, n, <span class="dv">250</span>, <span class="fl">2.7</span>, <span class="fl">1.486</span>, <span class="fl">32.2</span>, <span class="dv">100</span>, <span class="dv">0</span>, <span class="dt">stepdist =</span> <span class="dv">50</span>, <span class="dt">totaldist =</span> <span class="dv">3000</span>)</code></pre></div>
 <pre><code>## M1 profile specified. Computing upstream profile</code></pre>
 <pre><code>## Simulation type:
 ##   Gradually-varied flow

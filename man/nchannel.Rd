@@ -4,7 +4,7 @@
 \name{nchannel}
 \alias{nchannel}
 \title{Manning's n for Channels}
-\format{A data frame with 97 rows and 4 variables:
+\format{A data.table data frame with 97 rows and 4 variables:
 \describe{
 \item{Type of Channel and Description}{Type of channel name and any
 descriptive information}

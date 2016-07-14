@@ -1,6 +1,9 @@
-# iemiscdata 0.5.2
+# iemiscdata 0.6.0
 
-* Updated vignettes and README.md
+* Revised the examples in the vignettes (Manning's n and viewing the installed PDF file)
+* Changed the examples in the README.md
+* Added effective and nominal interest tables (Engineering Economics)
+* Added Wikipedia US Presidential Election table
 
 
 # iemiscdata 0.5.1

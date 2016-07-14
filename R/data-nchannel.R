@@ -5,7 +5,7 @@
 #' Manning coefficient (commonly called Manning's n)" and it's dimensionless.
 #' Source: Manning formula.
 #'
-#' @format A data frame with 97 rows and 4 variables:
+#' @format A data.table data frame with 97 rows and 4 variables:
 #' \describe{
 #' \item{Type of Channel and Description}{Type of channel name and any
 #' descriptive information}

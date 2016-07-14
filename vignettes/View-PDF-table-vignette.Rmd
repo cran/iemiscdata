@@ -19,7 +19,7 @@ If you would like to view the PDF tables, then use the code below that matches y
 <br />
 
 Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
-```R
+```{r eval = FALSE}
 # under Unix type operating sytem
 pdf <- getOption("pdfviewer", default = "")
 f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
@@ -28,7 +28,7 @@ system2(pdf, args = f)
 
 
 Source: [Show me the pdf already | R-bloggers By Will](http://www.r-bloggers.com/show-me-the-pdf-already/)
-```R
+```{r eval = FALSE}
 # under MS Windows
 f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
 shell.exec(normalizePath(f))
@@ -36,7 +36,7 @@ shell.exec(normalizePath(f))
 
 
 Source: [Opening PDF within R studio using file.show - Stack Overflow -- rensa](http://stackoverflow.com/questions/33791493/opening-pdf-within-r-studio-using-file-show/33791818)
-```R
+```{r eval = FALSE}
 # under OS X
 f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
 system2("open", args = f, wait = FALSE)
