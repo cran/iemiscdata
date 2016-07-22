@@ -1,6 +1,6 @@
-f59cb1a345d82a9ac8d973200d9a802d *DESCRIPTION
+7af0af5baa18df1b08c7c0014a64d197 *DESCRIPTION
 dc21c19f0d6968ee25d441b2cf46017d *NAMESPACE
-2b17a959038929724ebaf65e1a866fe8 *NEWS.md
+151c21bff4d555c0a30f39cc99d2ce53 *NEWS.md
 93ef9b82882f6badcb2ba55c31573405 *R/data-i1.R
 dde1988288e2f78debd395cd238f6c02 *R/data-i10.R
 751be4c6d0e8e1f19188b560ebe9e725 *R/data-i12.R
@@ -28,7 +28,7 @@ f288eeae18e60a10d1721a0357398bd2 *R/data-i_75.R
 580274450cb0e6a3f9f162c34848cb48 *R/data-r20.R
 7a759fc5452577a9800bc1667bf31e31 *R/data-r8.R
 f45427531505db0302f458c970d2cf03 *R/iemiscdata.R
-f6378233c37de4305ed49c5ca9ede699 *README.md
+0e64b5226f6865a9e8931f1acce2eb87 *README.md
 97b11bc33703f1a8afc83b19af06af13 *build/vignette.rds
 61ada9e29c27025436a6b684c16abdff *data/i1.RData
 3abeaf9b473058e2cfd18dad93515036 *data/i10.RData
@@ -57,12 +57,12 @@ bb67295b24b6a6ca7ba7509927f68385 *data/pres_elect1.RData
 b12c8ebe84872f3a4c303433a2c3734b *data/r20.RData
 f031e9acf43daeac815c10198f32b884 *data/r8.RData
 85b8c0e6b2bae965552b0c1a48a1d0ff *inst/CITATION
-94b3fc431387314aa6c79fb287bae5ed *inst/doc/Mannings-n-examples-vignette.R
-28c36d9a757afccaeca2845f0aed7994 *inst/doc/Mannings-n-examples-vignette.Rmd
-57e57d3b6ee67ca1005b4962971f991b *inst/doc/Mannings-n-examples-vignette.html
-486eb9e416514b98339f1aa6bc44fb1e *inst/doc/View-PDF-table-vignette.R
-52a866f1407ee445c1eecf3ba68307fd *inst/doc/View-PDF-table-vignette.Rmd
-faacd8aad9b583f811aa514327100cdf *inst/doc/View-PDF-table-vignette.html
+82f824fffe275c2bb027848c963b61a1 *inst/doc/Mannings-n-examples-vignette.R
+7b5aa2962b3787768d85bf191c6cd019 *inst/doc/Mannings-n-examples-vignette.Rmd
+3e676ead6013655e1aa6955177661efb *inst/doc/Mannings-n-examples-vignette.html
+adae8517054684fed8848bea65a52db1 *inst/doc/View-PDF-table-vignette.R
+515a641e777764ca404f615529f43655 *inst/doc/View-PDF-table-vignette.Rmd
+c165dda708f1e4f47b24c873e6e20b14 *inst/doc/View-PDF-table-vignette.html
 c889c27bddb8ae20a182401089fba1a8 *inst/pdf/Mannings_n_Values.pdf
 6d4caa7fb0d14fde0c502f93e11ffc84 *man/i1.Rd
 f6fab488880b6d6351d5e7718c39397d *man/i10.Rd
@@ -91,5 +91,5 @@ b60713e2b00dd51449cf3f66227e21ae *man/pres_elect1.Rd
 b027afb4cc17f5a654c8070320ccda31 *man/r10.Rd
 fb43c6c2475702c2adedea31febbd6e7 *man/r20.Rd
 a07aea7eb84d9fdbbe1e2d043768ac2b *man/r8.Rd
-28c36d9a757afccaeca2845f0aed7994 *vignettes/Mannings-n-examples-vignette.Rmd
-52a866f1407ee445c1eecf3ba68307fd *vignettes/View-PDF-table-vignette.Rmd
+7b5aa2962b3787768d85bf191c6cd019 *vignettes/Mannings-n-examples-vignette.Rmd
+515a641e777764ca404f615529f43655 *vignettes/View-PDF-table-vignette.Rmd

@@ -1,3 +1,8 @@
+# iemiscdata 0.6.1
+
+* Added `ie2misc`, `ie2miscdata` as suggested R packages
+
+
 # iemiscdata 0.6.0
 
 * Revised the examples in the vignettes (Manning's n and viewing the installed PDF file)

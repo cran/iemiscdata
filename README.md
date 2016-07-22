@@ -25,7 +25,9 @@ This package currently contains 26 datasets:
 # Examples (see more examples in the vignettes and in the function descriptions)
 ```R
 library(install.load)
-load_package("iemisc", "iemiscdata", "data.table", "dplyr", "rpivotTable") # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+load_package("iemisc", "iemiscdata", "data.table", "dplyr", "rpivotTable")
+# load needed packages using the load_package function from the install.load
+# package (it is assumed that you have already installed these packages)
 
 
 # Example 1
@@ -39,7 +41,8 @@ n <- 6
 P * i10[n, which(names(i10) == "F/P"), with = FALSE][[1]]
 # use i10 for the 10 percent effective interest table values
 # n is the row number
-# which(names(i10) == "F/P"), with = FALSE provides the column number in a data.table
+# which(names(i10) == "F/P"), with = FALSE provides the column number in a
+# data.table
 # [[1]] provides the value of the vector
 
 
@@ -55,7 +58,8 @@ n <- 5
 F * r20[n, which(names(r20) == "F/A"), with = FALSE][[1]]
 # use r20 for the 20 percent nominal interest table values
 # n is the row number
-# which(names(r20) == "F/A"), with = FALSE provides the column number in this data.table
+# which(names(r20) == "F/A"), with = FALSE provides the column number in this
+# data.table
 # [[1]] provides the value of the vector
 
 
@@ -77,7 +81,8 @@ View(npartfull)
 View(pres_elect1)
 
 
-# The number of elections won by the Winners of the Presidential Election using dplyr's count along with piping
+# The number of elections won by the Winners of the Presidential Election
+# using dplyr's count along with piping
 pres_elect1 %>% count(Winner)
 
 

@@ -2,8 +2,6 @@
 library(install.load)
 load_package("iemiscdata", "data.table", "rivr") # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
 
-# The examples make more sense if you have familiarized yourself with the nchannel, npartfull, and nmetalpipe tables. There are instructions to view the tables, as a .pdf, in the View-PDF-table-vignette.
-
 
 # Use grep to find the row number matching the given description
 # Use nchannel$"Type of Channel and Description" to select the column to search through
@@ -22,7 +20,13 @@ data(nchannel)
 
 nlocation <- grep("bottom: gravels, cobbles, and few boulders", nchannel$"Type of Channel and Description")
 
+nlocation
+
+
 n <- nchannel[nlocation, 4] # 4 for column 4 - Maximum n
+
+n
+
 
 
 
@@ -36,7 +40,13 @@ data(npartfull)
 
 nlocation <- grep("Stave", npartfull$"Type of Conduit and Description")
 
+nlocation
+
+
 n <- npartfull[nlocation, 2] # 2 for column 2 - Minimum n
+
+n
+
 
 
 
@@ -50,11 +60,18 @@ data(nmetalpipe)
 
 nnear <- grep("Corrugations 6x2 inches", nmetalpipe$"Type of Pipe, Diameter and Corrugation Dimension")
 # nnear is the row number matching the description
+nnear
+
 
 nlocation <- nlocation[which(grep("60\"\" diameter", nmetalpipe$"Type of Pipe, Diameter and Corrugation Dimension") > nnear)]
 # which provides all locations matching the description > nnear gives the row number(s) greater than nnear since the requested diameter is in the section located after nnear
+nlocation
+
 
 n <- nmetalpipe[nlocation, 2] # 2 for column 2 - n
+
+n
+
 
 
 
@@ -74,7 +91,13 @@ n <- nmetalpipe[nlocation, 2] # 2 for column 2 - n
 nlocation <- grep("clean, recently completed", nchannel$"Type of Channel and Description")
 # use grep to find the n's row number
 
+nlocation
+
+
 n <- nchannel[nlocation, 3] # 3 for column 3 - Normal n
+
+n
+
 
 compute_profile(0.001, n, 250, 2.7, 1.486, 32.2, 100, 0, stepdist = 50, totaldist = 3000)
 
