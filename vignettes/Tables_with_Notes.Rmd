@@ -1,0 +1,230 @@
+---
+title: "iemiscdata: Viewing Tables & Their Associated Notes"
+author: "Irucka Embry, E.I.T. (EcoC²S)"
+date: "`r Sys.Date()`"
+lang: en-us
+urlcolor: blue
+output:
+  rmarkdown::pdf_document:
+    highlight: kate
+    toc: true
+    latex_engine: xelatex
+vignette: >
+  %\VignetteIndexEntry{iemiscdata Viewing Tables & Their Associated Notes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+\bigskip
+
+# Table 2-1: Runoff depth for selected CN's and rainfall amounts & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+install.load::load_package("iemiscdata", "pander")
+# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+data(runoff_depth)
+data(runoff_depth_notes)
+# load the data from iemiscdata (containing 
+
+pander(runoff_depth)
+pander(runoff_depth_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# Table 2-2a: Runoff curve numbers for urban areas & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(cn_urban)
+data(cn_urban_notes)
+# load the data from iemiscdata (containing Table 2-2a: Runoff curve numbers for urban areas & notes)
+
+pander(cn_urban)
+pander(cn_urban_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# Table 2-2b: Runoff curve numbers for cultivated agricultural lands & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(cn_agricultural)
+data(cn_agricultural_notes)
+# load the data from iemiscdata (containing Table 2-2b: Runoff curve numbers for cultivated agricultural lands & notes)
+
+
+pander(cn_agricultural)
+pander(cn_agricultural_notes)
+```
+
+\bigskip
+\bigskip
+
+# Table 2-2c: Runoff curve numbers for other agricultural lands & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(cn_other_agricultural)
+data(cn_other_agricultural_notes)
+# load the data from iemiscdata (containing Table 2-2c: Runoff curve numbers for other agricultural lands & notes)
+
+
+pander(cn_other_agricultural)
+pander(cn_other_agricultural_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# Table 2-2d: Runoff curve numbers for arid and semiarid rangelands & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(cn_arid_semiarid)
+data(cn_arid_semiarid_notes)
+# load the data from iemiscdata (containing Table 2-2d: Runoff curve numbers for arid and semiarid rangelands & notes)
+
+
+pander(cn_arid_semiarid)
+pander(cn_arid_semiarid_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# Table from Appendix A: Hydrologic Soil Groups (HSGs) & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(hsg)
+data(hsg_definitions)
+# load the data from iemiscdata (containing Table from Appendix A: Hydrologic Soil Groups (HSGs) & notes)
+
+
+
+pander(hsg)
+pander(hsg_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# US EPA National Primary Drinking Water Regulations Contaminants Table & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+data(USA_primary_water_contaminants)
+data(USA_primary_water_contaminants_notes)
+# load the data from iemiscdata (containing US EPA National Primary Drinking Water Regulations Contaminants Table & notes)
+
+
+
+pander(USA_primary_water_contaminants)
+pander(USA_primary_water_contaminants_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# US EPA Secondary Drinking Water Standards Table & notes
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+data(USA_secondary_water_contaminants)
+data(USA_secondary_water_contaminants_notes)
+# load the data from iemiscdata (containing US EPA Secondary Drinking Water Standards Table & notes)
+
+
+
+pander(USA_secondary_water_contaminants)
+pander(USA_secondary_water_contaminants_notes)
+
+```
+
+\bigskip
+\bigskip
+
+# Table 3-1: Roughness coefficients (Manning's n) for sheet flow
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+data(nsheetflow)
+data(nsheetflow_notes)
+# load the data from iemiscdata (containing Table 3-1: Roughness coefficients (Manning's n) for sheet flow & notes)
+
+
+
+pander(nsheetflow)
+pander(nsheetflow_notes)
+
+
+```
+
+\bigskip
+\bigskip
+
+# Greenhouse Gases -- Percent Contribution to Total Greenhouse Effect (Wikipedia)
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+
+data(greenhouse_gases_cloudy_notes_wikipedia)
+data(greenhouse_gases_cloudy_notes_wikipedia_notes)
+# load the data from iemiscdata [containingGreenhouse Gases -- Percent Contribution to Total Greenhouse Effect & notes (Wikipedia)]
+
+
+
+pander(greenhouse_gases_cloudy_notes_wikipedia)
+pander(greenhouse_gases_cloudy_notes_wikipedia_notes)
+
+```
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+# Data Sources
+
+United States Department of Agriculture Natural Resources Conservation Service Conservation Engineering Division, "Urban Hydrology for Small Watersheds Technical Release 55 (TR-55)", June 1986, pages 2-3, 2-5 - 2-8, 3-3, 4-1 - 4-2, A-1, https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=22162.wba
+
+United States (US) Environmental Protection Agency (EPA): "National Primary Drinking Water Regulations", https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations.
+
+United States (US) Environmental Protection Agency (EPA): "Secondary Drinking Water Standards: Guidance for Nuisance Chemicals", https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals.
+
+Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, "Greenhouse gas", https://en.wikipedia.org/wiki/Greenhouse_gas.
+
+\bigskip
+\bigskip
+
+# EcoC²S Links
+
+EcoC²S Home -- https://www.ecoccs.com/  
+About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+Services -- https://www.ecoccs.com/services.html  
+1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+Products -- https://www.questionuniverse.com/products.html  
+Media -- https://www.ecoccs.com/media.html  
+Resources -- https://www.ecoccs.com/resources.html  
+R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://www.ecoccs.com/rtraining.html  
+
+\bigskip
+\bigskip
+
+# Copyright and License
+
+All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  

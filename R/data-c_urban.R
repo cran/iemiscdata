@@ -1,0 +1,24 @@
+#' Table 1: Values of Runoff Coefficient C in Urban Areas
+#'
+#' A table containing the C values for urban areas.
+#'
+#'
+#'
+#' @format A data.table data frame with 33 rows and 5 variables:
+#' \describe{
+#' item{Type of drainage area}{Drainage area type}
+#' item{Minimum Runoff Coefficient C}{Minimum C value}
+#' item{Average Runoff Coefficient C}{Average C value}
+#' item{Maximum Runoff Coefficient C}{Maximum C value}
+#' item{Runoff coefficient C}{Range of C values}
+#' }
+#'
+#'
+#' @source
+#' United States Department of Agriculture Natural Resources Conservation Service, "Hydrology Training Series: Module 206 D - Peak Discharge (Other Methods) Study Guide", page 16 of the PDF document, \url{https://web.archive.org/web/20211018222532/https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1083019.pdf}
+#'
+#'
+#'
+#'
+"c_urban"
+#> [1] "c_urban"

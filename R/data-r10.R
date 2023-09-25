@@ -15,13 +15,10 @@
 #' }
 #'
 #'
-#' @references
+#' @source
 #' William G. Sullivan, Elin M. Wicks, and C. Patrick Koelling, \emph{Engineering Economy}, Fourteenth Edition, Upper Saddle River, New Jersey: Pearson/Prentice Hall, 2009, page 625-647.
 #'
 #'
-#' @docType data
-#' @name r10
-#' @usage r10
-#' @examples
-#' r10
-NULL
+#'
+"r10"
+#> [1] "r10"

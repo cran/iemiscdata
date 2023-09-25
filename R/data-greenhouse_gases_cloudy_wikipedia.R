@@ -1,0 +1,26 @@
+#' Greenhouse Gases -- Percent Contribution to Total Greenhouse Effect (Wikipedia)
+#'
+#' A table containing the greenhouse gas contribution table.
+#'
+#'
+#'
+#' @format A data.table data frame with 6 rows and 5 variables:
+#' \describe{
+#' \item{Contributor}{Greenhouse gas contributor name}
+#' \item{K&T (1997) – Clear Sky}{Greenhouse gas individual contribution with a clear sky according to K&T}
+#' \item{K&T (1997) – With Clouds}{Greenhouse gas individual contribution with a cloudy sky according to K&T}
+#' \item{Schmidt (2010) – Clear Sky}{Greenhouse gas individual contribution with a clear sky according to Schmidt}
+#' \item{Schmidt (2010) – With Clouds}{Greenhouse gas individual contribution with a cloudy sky according to Schmidt}
+#' }
+#'
+#'
+#' @source
+#' Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, "Greenhouse gas", \url{https://en.wikipedia.org/wiki/Greenhouse_gas}.
+#'
+#'
+#'
+#'
+#'
+#'
+"greenhouse_gases_cloudy_wikipedia"
+#> [1] "greenhouse_gases_cloudy_wikipedia"

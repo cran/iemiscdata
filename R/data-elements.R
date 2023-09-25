@@ -1,0 +1,54 @@
+#' Period Table of the Elements (PubChem & Wikipedia)
+#'
+#' A table containing the combined periodic table of the elements from PubChem
+#' and Wikipedia.
+#'
+#'
+#'
+#' @format A data.table data frame with 118 rows and 30 variables:
+#' \describe{
+#' \item{Name}{Name of the element}
+#' \item{Atomic Number (Z)}{Atomic number of the element}
+#' \item{Formula}{Chemical formula of the element}
+#' \item{Standard Atomic weight (Da)}{Element atomic mass in Dalton unit}
+#' \item{Atomic Mass (u)}{Element atomic mass in the unified atomic mass unit (u)}
+#' \item{Atomic Radius (pm)}{Element atomic radius in pm}
+#' \item{Electron Configuration}{Element electron configuration}
+#' \item{Electronegativity}{Element electron configuration from Wikipedia}
+#' \item{Electronegativity [PubChem]}{Element electron configuration from PubChem}
+#' \item{Electron Affinity (eV)}{Element electron affinity}
+#' \item{Ionization Energy (eV)}{Element ionization energy}
+#' \item{Oxidation States}{Element oxidation states}
+#' \item{Period}{Period number of the element}
+#' \item{Group}{Group number of the element}
+#' \item{Group Name}{Name of the element group}
+#' \item{Group Block}{Group block name of the element}
+#' \item{Standard State at Room Temperature (Wikipedia)}{Standard state of the element at room temperature}
+#' \item{Standard State}{Standard state of the element at standard temperature and pressure (STP)}
+#' \item{Density (g/cm^3)}{Element density in grams / cubic centimeters}
+#' \item{Density (g/cm^3) [PubChem]}{Element density in grams / cubic centimeters using PubChem data}
+#' \item{Melting Point (K)}{Element melting point in Kelvin}
+#' \item{Melting Point (K) [PubChem]}{Element melting point in Kelvin using PubChem data}
+#' \item{Boiling Point (K)}{Element boiling point in Kelvin}
+#' \item{Boiling Point (K) [PubChem]}{Element boiling point in Kelvin using PubChem data}
+#' \item{Specific Heat Capacity (J/g K)}{Specific heat capacity of the element in Joules / grams Kelvin}
+#' \item{Abundance in Earth's crust (mg/kg)}{Amount present in the Earth's crust}
+#' \item{CPK Hex Color}{Corey-Pauling-Koltun Hex color for each element)}
+#' \item{Origin}{Origin of the element}
+#' \item{Origin of name}{Origin of the element name}
+#' \item{Year Discovered}{Year the element was discovered}
+#' }
+#'
+#'
+#' @source
+#' \enumerate{
+#'    \item PubChem [Internet]. Bethesda (MD): National Library of Medicine (US), National Center for Biotechnology Information; 2004-. Periodic Table of Elements; [cited 2023 May 12]. Available from: \url{https://pubchem.ncbi.nlm.nih.gov/periodic-table/}.
+#'    \item Wikimedia Foundation, Inc. Wikipedia, 18 September 2023, "List of chemical elements", \url{https://en.wikipedia.org/wiki/List_of_chemical_elements}.
+#' }
+#'
+#'
+#'
+#'
+#'
+"elements"
+#> [1] "elements"

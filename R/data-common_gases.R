@@ -1,0 +1,28 @@
+#' Common Gaseous Elements and Compounds
+#'
+#' A table containing common substances that are gases at 25 degrees C and 1.0
+#' atm. The elements and compounds are in separate columns.
+#'
+#'
+#'
+#' @format A data.table data frame with 23 rows and 4 variables:
+#' \describe{
+#' \item{Element_Formula}{Molecular formula of the element}
+#' \item{Element_Name}{Name of the element}
+#' \item{Compound_Formula}{Molecular formula of the compound}
+#' \item{Compound_Name}{Name of the compound}
+#' }
+#'
+#'
+#' @source
+#' \enumerate{
+#'    \item Chemistry LibreTexts, "Chapter 10.1: Gaseous Elements and Compounds", \url{https://chem.libretexts.org/LibreTexts/Howard_University/General_Chemistry\%3A_An_Atoms_First_Approach/Unit_4\%3A__Thermochemistry/Chapter_10\%3A_Gases/Chapter_10.1\%3A_Gaseous_Elements_and_Compounds}.
+#'    \item Gaseous composition of dry air, \url{https://web.archive.org/web/20161222023409/https://eesc.columbia.edu/courses/ees/slides/climate/table_1.html}. Retrieved thanks to the Internet Archive: Wayback Machine. Original data source: Mackenzie, F.T. and J.A. Mackenzie (1995) \emph{Our changing planet}. Prentice-Hall, Upper Saddle River, NJ, p 288-307. (After Warneck, 1988; Anderson, 1989; Wayne, 1991.)
+#' }
+#'
+#'
+#'
+#'
+#'
+"common_gases"
+#> [1] "common_gases"

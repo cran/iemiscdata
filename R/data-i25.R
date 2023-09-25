@@ -18,16 +18,13 @@
 #' }
 #'
 #'
-#' @references
+#' @source
 #' \enumerate{
 #'    \item William G. Sullivan, Elin M. Wicks, and C. Patrick Koelling, \emph{Engineering Economy}, Fourteenth Edition, Upper Saddle River, New Jersey: Pearson/Prentice Hall, 2009, page 625-647.
-#'    \item Masoud Olia, Ph.D., P.E. and Contributing Authors, \emph{Barron’s FE (Fundamentals of Engineering Exam)}, 3rd Edition, Hauppauge, New York: Barron’s Educational Series, Inc., 2015, page 178-187.
+#'    \item Masoud Olia, Ph.D., P.E. and Contributing Authors, \emph{Barron's FE (Fundamentals of Engineering Exam)}, 3rd Edition, Hauppauge, New York: Barron's Educational Series, Inc., 2015, page 178-187.
 #' }
 #'
 #'
-#' @docType data
-#' @name i25
-#' @usage i25
-#' @examples
-#' i25
-NULL
+#'
+"i25"
+#> [1] "i25"

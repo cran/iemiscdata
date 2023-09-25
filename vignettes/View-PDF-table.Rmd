@@ -1,0 +1,95 @@
+---
+title: "iemiscdata: PDF Version of Manning&#8217;s n Tables"
+author: "Irucka Embry, E.I.T. (EcoC²S)"
+date: "`r Sys.Date()`"
+lang: en-us
+urlcolor: blue
+output:
+  rmarkdown::pdf_document:
+    highlight: kate
+    toc: true
+    latex_engine: xelatex
+vignette: >
+  %\VignetteIndexEntry{iemiscdata PDF Version of Manning's n Tables}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+\bigskip
+
+# View PDF version of the tables
+
+If you would like to view the PDF tables, then use the code below that matches your operating system:  
+
+\bigskip
+\bigskip
+
+# under Unix-based operating systems
+
+Source: [Show me the pdf already | R-bloggers By Will](https://www.r-bloggers.com/2013/02/show-me-the-pdf-already/)  
+
+\medskip
+
+```{r eval = FALSE}
+pdf <- getOption("pdfviewer", default = "")
+
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+
+system2(pdf, args = f)
+```
+
+\bigskip
+\bigskip
+
+# under MS Windows operating systems
+
+Source: [Show me the pdf already | R-bloggers By Will](https://www.r-bloggers.com/2013/02/show-me-the-pdf-already/)  
+
+\medskip
+
+```{r eval = FALSE}
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+
+shell.exec(normalizePath(f))
+```
+
+\bigskip
+\bigskip
+
+# under OS X operating systems
+
+Source: [Opening PDF within R studio using file.show - Stack Overflow](https://stackoverflow.com/questions/33791493/opening-pdf-within-r-studio-using-file-show/33791818)  
+
+\medskip
+
+```{r eval = FALSE}
+
+f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+
+system2("open", args = f, wait = FALSE)
+```
+
+\bigskip
+\bigskip
+
+# EcoC²S Links
+
+EcoC²S Home -- https://www.ecoccs.com/  
+About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+Services -- https://www.ecoccs.com/services.html  
+1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+Products -- https://www.questionuniverse.com/products.html  
+Media -- https://www.ecoccs.com/media.html  
+Resources -- https://www.ecoccs.com/resources.html  
+R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://www.ecoccs.com/rtraining.html  
+
+\bigskip
+\bigskip
+
+# Copyright and License
+
+All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  

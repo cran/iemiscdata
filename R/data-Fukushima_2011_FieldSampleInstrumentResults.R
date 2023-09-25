@@ -1,0 +1,44 @@
+#' US DOE/NNSA Response to 2011 Fukushima Incident: Instrument Samples (InSitu Measurements)
+#'
+#' A table containing data after the radiation leaks from the nuclear power
+#' plants in Japan.
+#'
+#'
+#'
+#' @format A data.table data frame with 2,581 rows and 24 variables:
+#' \describe{
+#' item{Analysis Id}{Identification for the analysis}
+#' item{Sample Id}{Identification for the sample}
+#' item{Sample#}{Sample number}
+#' item{Type}{Source of sample}
+#' item{Fixed?}{Is the type fixed?}
+#' item{Latitude}{Latitude for the sample location}
+#' item{Longitude}{Longitude for the sample location}
+#' item{Distance(miles)}{Distance in miles}
+#' item{Bearing}{Bearing for the location}
+#' item{Direction}{Direction for the location}
+#' item{Collection Date}{Date of collection}
+#' item{Source}{Source}
+#' item{Description}{Description}
+#' item{Spectra File}{Spectra file}
+#' item{Sampling Time}{Time of the sampling}
+#' item{Live Time}{Live time}
+#' item{Instrument Height}{Instrument height}
+#' item{Uncertainty\%}{Percent of uncertainty}
+#' item{MDA}{MDA}
+#' item{Method Code}{Method code}
+#' item{Moisture\%}{Moisture percent}
+#' item{Nuclide}{Nuclide}
+#' item{Result}{Result}
+#' item{Unit}{Unit for the result}
+#' }
+#'
+#'
+#' @source
+#' United States (US) Department of Energy (DOE)/National Nuclear Security Administration (NNSA), "US DOE/NNSA Response to 2011 Fukushima Incident: Instrument Samples (InSitu Measurements)", \url{https://web.archive.org/web/20160630225626/https://catalog.data.gov/dataset/us-doe-nnsa-response-to-2011-fukushima-incident-instrument-samples-insitu-measurements-09ee4}. Retrieved thanks to the Internet Archive: Wayback Machine
+#'
+#'
+#'
+#'
+"Fukushima_2011_FieldSampleInstrumentResults"
+#> [1] "Fukushima_2011_FieldSampleInstrumentResults"

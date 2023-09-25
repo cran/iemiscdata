@@ -15,16 +15,13 @@
 #' }
 #'
 #'
-#' @references
+#' @source
 #' \enumerate{
-#'    \item This data is from FishXing Version 3.0 Beta (2006) by Michael Furniss, Michael Love, Susan Firor, Kathleen Moynan, Antonio Llanos, Jeff Guntle, and Robert Gubernick. See \url{http://www.fsl.orst.edu/geowater/FX3/help/8_Hydraulic_Reference/Mannings_n_Tables.htm}. The original data source is Ven Te Chow, \emph{Open-Channel Hydraulics}, New York City, York: McGraw-Hill, 1959.
-#'    \item Wikimedia Foundation, Inc. Wikipedia, 26 November 2015, “Manning formula”, \url{https://en.wikipedia.org/wiki/Manning_formula}.
+#'    \item This data is from FishXing Version 3.0 Beta (2006) by Michael Furniss, Michael Love, Susan Firor, Kathleen Moynan, Antonio Llanos, Jeff Guntle, and Robert Gubernick. See \url{https://www.fsl.orst.edu/geowater/FX3/help/8_Hydraulic_Reference/Mannings_n_Tables.htm}. The original data source is Ven Te Chow, \emph{Open-Channel Hydraulics}, New York City, York: McGraw-Hill, 1959.
+#'    \item Wikimedia Foundation, Inc. Wikipedia, 26 November 2015, "Manning formula", \url{https://en.wikipedia.org/wiki/Manning_formula}.
 #' }
 #'
 #'
-#' @docType data
-#' @name npartfull
-#' @usage npartfull
-#' @examples
-#' npartfull
-NULL
+#'
+"npartfull"
+#> [1] "npartfull"

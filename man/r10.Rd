@@ -4,7 +4,8 @@
 \name{r10}
 \alias{r10}
 \title{10 Percent Nominal Interest Table (Engineering Economy)}
-\format{A data.table data frame with 44 rows and 6 variables:
+\format{
+A data.table data frame with 44 rows and 6 variables:
 \describe{
 \item{n}{The "number of periods (years)"}
 \item{F/P}{Future value given present value}
@@ -12,7 +13,11 @@
 \item{F/A}{Future value given annual value}
 \item{P/A}{Present value given annual value}
 \item{n}{The "number of periods (years)"}
-}}
+}
+}
+\source{
+William G. Sullivan, Elin M. Wicks, and C. Patrick Koelling, \emph{Engineering Economy}, Fourteenth Edition, Upper Saddle River, New Jersey: Pearson/Prentice Hall, 2009, page 625-647.
+}
 \usage{
 r10
 }
@@ -21,10 +26,4 @@ A table containing the number of periods and the corresponding engineering
 economic value given the "nominal annual interest rate, compounded
 continuously" and period.
 }
-\examples{
-r10
-}
-\references{
-William G. Sullivan, Elin M. Wicks, and C. Patrick Koelling, \emph{Engineering Economy}, Fourteenth Edition, Upper Saddle River, New Jersey: Pearson/Prentice Hall, 2009, page 625-647.
-}
-
+\keyword{datasets}

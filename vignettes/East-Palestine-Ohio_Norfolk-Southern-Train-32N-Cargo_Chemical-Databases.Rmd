@@ -1,0 +1,150 @@
+---
+title: "iemiscdata: USEPA East Palestine, Ohio Norfolk Southern Train 32N Cargo List -- Chemical Databases Match"
+author: "Irucka Embry, E.I.T. (EcoC²S)"
+date: "`r Sys.Date()`"
+lang: en-us
+urlcolor: blue
+output:
+  rmarkdown::pdf_document:
+    highlight: kate
+    toc: true
+    latex_engine: xelatex
+vignette: >
+  %\VignetteIndexEntry{iemiscdata USEPA East Palestine, Ohio Norfolk Southern Train 32N Cargo List -- Chemical Databases Match}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+\bigskip
+
+# Available Chemical Information
+
+The following provides chemical information from either the chem_wiki or atsdr_tsca_ld50_a data sets from the `chem.databases` R package created by the author for matching chemical substances in the commodities list from the United States Environmental Protection Agency (US EPA) East Palestine, Ohio Norfolk Southern Train 32N Cargo List. The cargo list is one of the data sets in this `iemiscdata` R package also created by the author.
+
+\medskip
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+install.load::load_package("iemiscdata", "chem.databases", "data.table", "mgsub", "stringi", "pander")
+# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+data(norfolk_southern_epoh)
+# from iemiscdata package
+
+data(chem_wiki)
+# from chem.databases package
+
+data(atsdr_tsca_ld50_a)
+# from chem.databases package
+
+
+
+train_commodities <- unique(norfolk_southern_epoh$Commodity)
+
+pander(train_commodities)
+
+
+# remove items that are not needed
+
+train_commodities <- train_commodities[-c(3, 9, 16:20, 23:26)]
+
+
+# remove words that are not needed
+
+train_commodities <- mgsub(train_commodities, c(", STABILIZED", "COMBUSTIBLE LIQ., NOS", "LUBE OIL", "WAX"), rep("", 4), fixed = TRUE)
+
+
+# remove parentheses that are not needed
+
+train_commodities <- mgsub(train_commodities, c("\\(", "\\)"), rep("", 2), fixed = FALSE)
+
+
+# remove the beginning and trailing white space
+
+train_commodities <- stri_trim_both(train_commodities)
+
+
+# transform the text to sentence case
+
+train_commodities <- stri_trans_totitle(train_commodities, type = "sentence")
+
+
+# correct the spelling as needed
+
+train_commodities[4] <- "Dipropylene glycol"
+
+train_commodities[9] <- "Polyvinyl chloride"
+
+train_commodities[13] <- "Butyl acrylate"
+
+pander(train_commodities)
+
+
+# the exact matched chemical names
+
+pander(chem_wiki[`Substance Name` %in% train_commodities])
+
+pander(atsdr_tsca_ld50_a[`Registry Name` %in% train_commodities])
+
+
+# the matched names
+
+train_match1 <- chem_wiki[`Substance Name` %in% train_commodities]
+
+train_match2 <- atsdr_tsca_ld50_a[`Registry Name` %in% train_commodities]
+
+train_matchs1 <- train_match1$"Substance Name"
+
+train_matchs2 <- train_match2$"Registry Name"
+
+train_match <- unique(c(train_matchs1, train_matchs2))
+
+pander(train_match)
+
+
+train_match_cas1 <- train_match1$CAS
+
+train_match_cas2 <- train_match2$CAS
+
+train_match_cas <- unique(c(train_match_cas1, train_match_cas2))
+
+pander(train_match_cas)
+
+
+# remove the matched names
+
+train_commodities2 <- train_commodities[-which(train_commodities %in% train_match)]
+
+
+# these are the chemical substances without an exact match
+
+pander(train_commodities2)
+
+```
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+# EcoC²S Links
+
+EcoC²S Home -- https://www.ecoccs.com/  
+About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+Services -- https://www.ecoccs.com/services.html  
+1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+Products -- https://www.questionuniverse.com/products.html  
+Media -- https://www.ecoccs.com/media.html  
+Resources -- https://www.ecoccs.com/resources.html  
+R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://www.ecoccs.com/rtraining.html  
+
+\bigskip
+\bigskip
+
+# Copyright and License
+
+All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  

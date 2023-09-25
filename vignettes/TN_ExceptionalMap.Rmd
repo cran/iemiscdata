@@ -1,0 +1,129 @@
+---
+title: "iemiscdata: Map of Tennessee Exceptional Waters"
+author: "Irucka Embry, E.I.T. (EcoC²S)"
+date: "`r Sys.Date()`"
+lang: en-us
+urlcolor: blue
+output:
+  rmarkdown::pdf_document:
+    highlight: kate
+    toc: true
+    latex_engine: xelatex
+vignette: >
+  %\VignetteIndexEntry{iemiscdata Map of Tennessee Exceptional Waters}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+\bigskip
+
+# Creating a ggplot2 Map of the Tennessee Exceptional Waters
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE, out.width = "100%", out.height = "100%"}
+install.load::load_package("iemiscdata", "iemisc", "USA.state.boundaries", "ggplot2", "sfheaders", "sf", "dplyr", "data.table")
+# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+# load the exceptional_tn_waters data from iemiscdata (containing the Exceptional Tennessee Waters)
+data(exceptional_tn_waters)
+
+# load the state_boundaries_wgs84 data from USA.state.boundaries (for the US map)
+data(state_boundaries_wgs84)
+
+
+
+# determine all states that have a river source or end point
+states1 <- unique(lat_long2state(na.omit(exceptional_tn_waters$From_Lat), na.omit(exceptional_tn_waters$From_Long)))
+
+states2 <- unique(lat_long2state(na.omit(exceptional_tn_waters$To_Lat), na.omit(exceptional_tn_waters$To_Long)))
+
+get_states <- unique(states1, states2)
+
+
+
+# subset all states that have a river source or end point from state_boundaries_wgs84 
+river_states <- subset(state_boundaries_wgs84, NAME %in% get_states)
+# Source 1 / subset for Southeast states only
+
+states_map <- st_as_sf(river_states, crs = "+proj=longlat +datum=NAD83")
+
+
+
+# add an id column to exceptional_tn_waters
+exceptional_tn_waters_map <- exceptional_tn_waters[, id := seq(nrow(exceptional_tn_waters))]
+
+# Source 2 begins
+# the data has to be in long form to use sfheaders
+tn_dt1 <- exceptional_tn_waters[, .(id, lon = From_Long, lat = From_Lat)]
+
+tn_dt2 <- exceptional_tn_waters[, .(id, lon = To_Long, lat = To_Lat)]
+
+
+# Add a "sequence" variable to identify which one occurs first
+tn_dt1[, sequence := 1L ]
+tn_dt2[, sequence := 2L ]
+
+
+# rbind the data.tables
+exceptional_tn_waters_map2 <- rbindlist(list(tn_dt1, tn_dt2), use.names = TRUE)
+
+
+# set the row ordering
+setorder(exceptional_tn_waters_map2, id, sequence)
+# Source 2 ends
+
+map1 <- exceptional_tn_waters_map2
+
+# Source 3 begins
+map2 <- map1 %>% 
+  st_as_sf(coords = c("lon", "lat"), na.fail = FALSE, crs = "epsg:4326") %>% 
+  group_by(id) %>% 
+  summarize() %>%
+  filter(st_geometry_type(.) == "MULTIPOINT") %>%
+  st_cast("MULTILINESTRING")
+# Source 3 ends
+
+
+p <- ggplot() + geom_sf(data = states_map, colour = "black", fill = "white")
+p <- p + geom_sf(data = map2, colour = "blue")
+p <- p + labs(x = "", y = "", title = "Tennessee Exceptional Waters Map")
+print(p)
+```
+
+\bigskip
+\bigskip
+
+# R Sources
+
+Source 1  
+How to draw good looking maps in R by Jie Zhou on April 18, 2011. See https://uchicagoconsulting.wordpress.com/tag/r-ggplot2-maps-visualization/.  
+
+Source 2  
+geometry - r - Create linestring from two points in same row in dataframe - Stack Overflow. Edited answer by SymbolixAU on Jan 29, 2021. See https://stackoverflow.com/questions/51918536/r-create-linestring-from-two-points-in-same-row-in-dataframe  
+
+Source 3  
+R - sf - create linestrings from sets of coordinate points with missing values - Geographic Information Systems Stack Exchange. Answer by dimfalk on Dec 27, 2022 and edited on Dec 28, 2022. See https://gis.stackexchange.com/questions/448455/r-sf-create-linestrings-from-sets-of-coordinate-points-with-missing-values  
+
+\bigskip
+\bigskip
+
+# EcoC²S Links
+
+EcoC²S Home -- https://www.ecoccs.com/  
+About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+Services -- https://www.ecoccs.com/services.html  
+1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+Products -- https://www.questionuniverse.com/products.html  
+Media -- https://www.ecoccs.com/media.html  
+Resources -- https://www.ecoccs.com/resources.html  
+R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://www.ecoccs.com/rtraining.html  
+
+\bigskip
+\bigskip
+
+# Copyright and License
+
+All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  
