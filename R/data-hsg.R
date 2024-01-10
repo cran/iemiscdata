@@ -6,8 +6,8 @@
 #'
 #' @format A data.table data frame with 4 rows and 2 variables:
 #' \describe{
-#' item{Hydrologic Soil Group (HSG)}{Hydrologic soil group}
-#' item{Soil textures}{Texture of soil}
+#' \item{Hydrologic Soil Group (HSG)}{Hydrologic soil group}
+#' \item{Soil textures}{Texture of soil}
 #' }
 #'
 #'

@@ -1,3 +1,8 @@
+# iemiscdata 1.0.1 (9 January 2024)
+
+* Received an e-mail issue from Prof Brian Ripley on 11 December 2023 regarding the package check notes at https://cran.r-project.org/web/checks/check_results_iemiscdata.html. The issues have been resolved.
+
+
 # iemiscdata 1.0.0 (25 September 2023)
 
 * Changed the R version due to this warning message: "Added dependency on R >= 3.5.0 because serialized objects in serialize/load version 3 cannot be read in older versions of R."

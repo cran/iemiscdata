@@ -7,10 +7,10 @@
 \format{
 A data.table data frame with 5 rows and 4 variables:
 \describe{
-item{Machined riprap Class}{Description of the surface}
-item{Minimum Diameter Size [yd]}{Minimum diameter size of riprap}
-item{Average Diameter Size [yd]}{Minimum diameter size of riprap}
-item{Maximum Diameter Size [yd]}{Minimum diameter size of riprap}
+\item{Machined riprap Class}{Description of the surface}
+\item{Minimum Diameter Size [yd]}{Minimum diameter size of riprap}
+\item{Average Diameter Size [yd]}{Minimum diameter size of riprap}
+\item{Maximum Diameter Size [yd]}{Minimum diameter size of riprap}
 }
 }
 \source{

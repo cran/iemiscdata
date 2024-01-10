@@ -7,10 +7,10 @@
 #'
 #' @format A data.table data frame with 5 rows and 4 variables:
 #' \describe{
-#' item{Machined riprap Class}{TDOT class of machined riprap}
-#' item{Minimum Diameter Size [ft]}{Minimum diameter size of riprap}
-#' item{Average Diameter Size [ft]}{Average diameter size of riprap}
-#' item{Maximum Diameter Size [ft]}{Maximum diameter size of riprap}
+#' \item{Machined riprap Class}{TDOT class of machined riprap}
+#' \item{Minimum Diameter Size [ft]}{Minimum diameter size of riprap}
+#' \item{Average Diameter Size [ft]}{Average diameter size of riprap}
+#' \item{Maximum Diameter Size [ft]}{Maximum diameter size of riprap}
 #' }
 #'
 #'

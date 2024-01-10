@@ -1,4 +1,4 @@
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 install.load::load_package("iemiscdata", "pander")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
@@ -11,7 +11,7 @@ pander(runoff_depth)
 pander(runoff_depth_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(cn_urban)
 data(cn_urban_notes)
@@ -21,7 +21,7 @@ pander(cn_urban)
 pander(cn_urban_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(cn_agricultural)
 data(cn_agricultural_notes)
@@ -31,7 +31,7 @@ data(cn_agricultural_notes)
 pander(cn_agricultural)
 pander(cn_agricultural_notes)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(cn_other_agricultural)
 data(cn_other_agricultural_notes)
@@ -42,7 +42,7 @@ pander(cn_other_agricultural)
 pander(cn_other_agricultural_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(cn_arid_semiarid)
 data(cn_arid_semiarid_notes)
@@ -53,7 +53,7 @@ pander(cn_arid_semiarid)
 pander(cn_arid_semiarid_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(hsg)
 data(hsg_definitions)
@@ -65,7 +65,7 @@ pander(hsg)
 pander(hsg_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 data(USA_primary_water_contaminants)
 data(USA_primary_water_contaminants_notes)
 # load the data from iemiscdata (containing US EPA National Primary Drinking Water Regulations Contaminants Table & notes)
@@ -76,7 +76,7 @@ pander(USA_primary_water_contaminants)
 pander(USA_primary_water_contaminants_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 data(USA_secondary_water_contaminants)
 data(USA_secondary_water_contaminants_notes)
 # load the data from iemiscdata (containing US EPA Secondary Drinking Water Standards Table & notes)
@@ -87,7 +87,7 @@ pander(USA_secondary_water_contaminants)
 pander(USA_secondary_water_contaminants_notes)
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(nsheetflow)
 data(nsheetflow_notes)
@@ -100,7 +100,7 @@ pander(nsheetflow_notes)
 
 
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 
 data(greenhouse_gases_cloudy_notes_wikipedia)

@@ -7,11 +7,11 @@
 \format{
 A data.table data frame with 33 rows and 5 variables:
 \describe{
-item{Type of drainage area}{Drainage area type}
-item{Minimum Runoff Coefficient C}{Minimum C value}
-item{Average Runoff Coefficient C}{Average C value}
-item{Maximum Runoff Coefficient C}{Maximum C value}
-item{Runoff coefficient C}{Range of C values}
+\item{Type of drainage area}{Drainage area type}
+\item{Minimum Runoff Coefficient C}{Minimum C value}
+\item{Average Runoff Coefficient C}{Average C value}
+\item{Maximum Runoff Coefficient C}{Maximum C value}
+\item{Runoff coefficient C}{Range of C values}
 }
 }
 \source{

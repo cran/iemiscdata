@@ -5,11 +5,11 @@
 #'
 #' @format A data.table data frame with 28 rows and 5 variables:
 #' \describe{
-#' item{Rainfall type}{Rainfall distribution type}
-#' item{Ia/P}{"Initial abstraction" over Rainfall ratio}
-#' item{C0}{Coefficient value}
-#' item{C1}{Coefficient value}
-#' item{C2}{Coefficient value}
+#' \item{Rainfall type}{Rainfall distribution type}
+#' \item{Ia/P}{"Initial abstraction" over Rainfall ratio}
+#' \item{C0}{Coefficient value}
+#' \item{C1}{Coefficient value}
+#' \item{C2}{Coefficient value}
 #' }
 #'
 #'

@@ -7,8 +7,8 @@
 \format{
 A data.table data frame with 59 rows and 2 variables:
 \describe{
-item{Curve number}{Runoff curve number}
-item{Ia (in)}{Initial abstraction in inches}
+\item{Curve number}{Runoff curve number}
+\item{Ia (in)}{Initial abstraction in inches}
 }
 }
 \source{

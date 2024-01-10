@@ -3,7 +3,7 @@
 \docType{data}
 \name{gases}
 \alias{gases}
-\title{Gases at Standard Temperature and Pressure (STP) {Wikipedia}}
+\title{Gases at Standard Temperature and Pressure (STP) -- Wikipedia}
 \format{
 A data.table data frame with 540 rows and 6 variables:
 \describe{

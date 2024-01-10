@@ -1,4 +1,4 @@
-#' Gases at Standard Temperature and Pressure (STP) {Wikipedia} -- Plain
+#' Gases at Standard Temperature and Pressure (STP) -- Wikipedia -- Plain
 #'
 #' A table containing gases at standard conditions without the brackets next to
 #' the gas name in the Name column.

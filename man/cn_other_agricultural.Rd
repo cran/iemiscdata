@@ -7,13 +7,13 @@
 \format{
 A data.table data frame with 19 rows and 7 variables:
 \describe{
-item{Cover type}{Type of agricultural ground cover}
-item{Hydrologic condition *3}{Hydrologic condition}
-item{Curve numbers for hydrologic soil group A}{Curve numbers for soil group A}
-item{Notes}{Any notes for soil group A}
-item{Curve numbers for hydrologic soil group B}{Curve numbers for soil group B}
-item{Curve numbers for hydrologic soil group C}{Curve numbers for soil group C}
-item{Curve numbers for hydrologic soil group D}{Curve numbers for soil group D}
+\item{Cover type}{Type of agricultural ground cover}
+\item{Hydrologic condition *3}{Hydrologic condition}
+\item{Curve numbers for hydrologic soil group A}{Curve numbers for soil group A}
+\item{Notes}{Any notes for soil group A}
+\item{Curve numbers for hydrologic soil group B}{Curve numbers for soil group B}
+\item{Curve numbers for hydrologic soil group C}{Curve numbers for soil group C}
+\item{Curve numbers for hydrologic soil group D}{Curve numbers for soil group D}
 }
 }
 \source{

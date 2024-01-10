@@ -6,11 +6,11 @@
 #'
 #' @format A data.table data frame with 4 rows and 5 variables:
 #' \describe{
-#' item{Rainfall distribution}{Rainfall distribution type}
-#' item{C0}{Coefficient value}
-#' item{C1}{Coefficient value}
-#' item{C2}{Coefficient value}
-#' item{C3}{Coefficient value}
+#' \item{Rainfall distribution}{Rainfall distribution type}
+#' \item{C0}{Coefficient value}
+#' \item{C1}{Coefficient value}
+#' \item{C2}{Coefficient value}
+#' \item{C3}{Coefficient value}
 #' }
 #'
 #'

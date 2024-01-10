@@ -7,8 +7,8 @@
 #'
 #' @format A data.table data frame with 12 rows and 2 variables:
 #' \describe{
-#' item{Surface description}{Description of the surface}
-#' item{"n *1}{Manning's roughness coefficient}
+#' \item{Surface description}{Description of the surface}
+#' \item{"n *1}{Manning's roughness coefficient}
 #' }
 #'
 #'

@@ -1,4 +1,4 @@
-#' Gases at Standard Temperature and Pressure (STP) {Wikipedia}
+#' Gases at Standard Temperature and Pressure (STP) -- Wikipedia
 #'
 #' A table containing gases at standard conditions.
 #'

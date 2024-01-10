@@ -7,22 +7,22 @@
 #'
 #' @format A data.table data frame with 4,335 rows and 16 variables:
 #' \describe{
-#' item{ID}{Identification}
-#' item{Measurement Date}{Date of measurement}
-#' item{Latitude}{Latitude for the sample location}
-#' item{Longitude}{Longitude for the sample location}
-#' item{Fixed?}{Is the location fixed?}
-#' item{Distance(miles)}{Distance in miles}
-#' item{Bearing}{Bearing for the location}
-#' item{Direction}{Direction for the location}
-#' item{Type}{Type of radiation}
-#' item{Derived?}{Derived radiation value}
-#' item{Value}{Value for the radiation}
-#' item{Unit}{Unit of measurement for radiation value}
-#' item{Source}{Source of data}
-#' item{Description}{Description}
-#' item{Meter}{Name of meter used}
-#' item{Probe}{Name of probe used}
+#' \item{ID}{Identification}
+#' \item{Measurement Date}{Date of measurement}
+#' \item{Latitude}{Latitude for the sample location}
+#' \item{Longitude}{Longitude for the sample location}
+#' \item{Fixed?}{Is the location fixed?}
+#' \item{Distance(miles)}{Distance in miles}
+#' \item{Bearing}{Bearing for the location}
+#' \item{Direction}{Direction for the location}
+#' \item{Type}{Type of radiation}
+#' \item{Derived?}{Derived radiation value}
+#' \item{Value}{Value for the radiation}
+#' \item{Unit}{Unit of measurement for radiation value}
+#' \item{Source}{Source of data}
+#' \item{Description}{Description}
+#' \item{Meter}{Name of meter used}
+#' \item{Probe}{Name of probe used}
 #' }
 #'
 #'

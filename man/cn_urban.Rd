@@ -7,12 +7,12 @@
 \format{
 A data.table data frame with 34 rows and 6 variables:
 \describe{
-item{Cover type and hydrologic condition}{Urban cover type and the hydrologic condition}
-item{Average percent impervious area *2}{The average impervious area percent, if any}
-item{Curve numbers for hydrologic soil group A}{Curve numbers for soil group A}
-item{Curve numbers for hydrologic soil group B}{Curve numbers for soil group B}
-item{Curve numbers for hydrologic soil group C}{Curve numbers for soil group C}
-item{Curve numbers for hydrologic soil group D}{Curve numbers for soil group D}
+\item{Cover type and hydrologic condition}{Urban cover type and the hydrologic condition}
+\item{Average percent impervious area *2}{The average impervious area percent, if any}
+\item{Curve numbers for hydrologic soil group A}{Curve numbers for soil group A}
+\item{Curve numbers for hydrologic soil group B}{Curve numbers for soil group B}
+\item{Curve numbers for hydrologic soil group C}{Curve numbers for soil group C}
+\item{Curve numbers for hydrologic soil group D}{Curve numbers for soil group D}
 }
 }
 \source{

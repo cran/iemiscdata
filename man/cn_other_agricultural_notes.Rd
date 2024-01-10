@@ -7,8 +7,8 @@
 \format{
 A data.table data frame with 11 rows and 2 variables:
 \describe{
-item{Note Number (*)}{The note numbers}
-item{Notes}{The notes}
+\item{Note Number (*)}{The note numbers}
+\item{Notes}{The notes}
 }
 }
 \source{

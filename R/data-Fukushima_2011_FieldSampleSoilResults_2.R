@@ -7,31 +7,31 @@
 #'
 #' @format A data.table data frame with 2,032 rows and 25 variables:
 #' \describe{
-#' item{Analysis Id}{Identification for the analysis}
-#' item{Sample Id}{Identification for the sample}
-#' item{Sample#}{Sample number}
-#' item{Type}{Source of sample}
-#' item{Fixed?}{Is the type fixed?}
-#' item{Latitude}{Latitude for the sample location}
-#' item{Longitude}{Longitude for the sample location}
-#' item{Distance(miles)}{Distance in miles}
-#' item{Bearing}{Bearing for the location}
-#' item{Direction}{Direction for the location}
-#' item{Collection Date}{Date of collection}
-#' item{Source}{Source}
-#' item{Description}{Description}
-#' item{Weight}{Filter type}
-#' item{Weight Unit}{Volume}
-#' item{Depth}{Unit of measurement for volume}
-#' item{Surface Area(cm2)}{Volume}
-#' item{Shape}{Unit of measurement for volume}
-#' item{Uncertainty\%}{Percent of uncertainty}
-#' item{MDA}{MDA}
-#' item{Method Code}{Method code}
-#' item{Moisture\%}{Moisture percent}
-#' item{Nuclide}{Nuclide}
-#' item{Result}{Result}
-#' item{Unit}{Unit for the result}
+#' \item{Analysis Id}{Identification for the analysis}
+#' \item{Sample Id}{Identification for the sample}
+#' \item{Sample#}{Sample number}
+#' \item{Type}{Source of sample}
+#' \item{Fixed?}{Is the type fixed?}
+#' \item{Latitude}{Latitude for the sample location}
+#' \item{Longitude}{Longitude for the sample location}
+#' \item{Distance(miles)}{Distance in miles}
+#' \item{Bearing}{Bearing for the location}
+#' \item{Direction}{Direction for the location}
+#' \item{Collection Date}{Date of collection}
+#' \item{Source}{Source}
+#' \item{Description}{Description}
+#' \item{Weight}{Filter type}
+#' \item{Weight Unit}{Volume}
+#' \item{Depth}{Unit of measurement for volume}
+#' \item{Surface Area(cm2)}{Volume}
+#' \item{Shape}{Unit of measurement for volume}
+#' \item{Uncertainty\%}{Percent of uncertainty}
+#' \item{MDA}{MDA}
+#' \item{Method Code}{Method code}
+#' \item{Moisture\%}{Moisture percent}
+#' \item{Nuclide}{Nuclide}
+#' \item{Result}{Result}
+#' \item{Unit}{Unit for the result}
 #' }
 #'
 #'

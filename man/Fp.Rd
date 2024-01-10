@@ -7,8 +7,8 @@
 \format{
 A data.table data frame with 5 rows and 2 variables:
 \describe{
-item{Percentage of pond and swamp areas}{Percent of pond and swamp areas}
-item{Fp}{Adjustment factor}
+\item{Percentage of pond and swamp areas}{Percent of pond and swamp areas}
+\item{Fp}{Adjustment factor}
 }
 }
 \source{

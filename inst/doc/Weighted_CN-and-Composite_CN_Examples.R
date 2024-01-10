@@ -1,4 +1,4 @@
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 install.load::load_package("iemiscdata", "iemisc", "round", "data.table")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
@@ -28,7 +28,7 @@ CNa <- c(CN1, CN2)
 area_pct1 <- c(0.70, 0.30)
 weighted_CN(CN = CNa, area_pct = area_pct1)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(cn_urban)
 
@@ -68,7 +68,7 @@ CNb <- c(CN1, CN2, CN3)
 area_pct2 <- c(0.30, 0.40, 0.30)
 weighted_CN(CN = CNb, area_pct = area_pct2)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # locate the row where "Cover type and hydrologic condition" == "1/2 acre"
 CNlocation1 <- cn_urban[cn_urban$"Cover type and hydrologic condition" == "1/2 acre", ]
@@ -117,7 +117,7 @@ CNc <- c(CN1_new, CN2_new, CN3)
 area_pct3 <- c(0.30, 0.40, 0.30)
 weighted_CN(CN = CNc, area_pct = area_pct3)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # locate the row where "Cover type and hydrologic condition" == "1/2 acre"
 CNlocation1 <- cn_urban[cn_urban$"Cover type and hydrologic condition" == "1/2 acre", ]

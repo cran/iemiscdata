@@ -1,8 +1,8 @@
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 install.load::load_package("iemiscdata", "data.table", "iemisc", "rivr", "units")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 # Use grep to find the row number matching the given description
 # Use nchannel$"Type of Channel and Description" to select the column to search through
 # Use nchannel[nlocation, 4] to select the row number from nlocation and column 4
@@ -24,7 +24,7 @@ n1 <- nlocation1$"Maximum n"
 
 n1
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 
 # The 1st heading is "Manning's n for Closed Conduits Flowing Partly Full"
@@ -40,7 +40,7 @@ n2 <- nlocation2$"Minimum n"
 
 n2
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # The 1st heading is "Manning's n for Corrugated Metal Pipe"
 # The 2nd heading is "Corrugations 6x2 inches"
@@ -55,7 +55,7 @@ n3 <- nlocation3$"n"
 
 n3
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # The 1st heading is "Manning's n for Channels"
 # The 2nd heading is "Natural streams - minor streams (top width at floodstage < 100 ft)"
@@ -77,7 +77,7 @@ n4
 
 compute_profile(0.001, n4, 250, 2.7, 1.486, 32.2, 100, 0, stepdist = 50, totaldist = 3000)
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # Let's assume that the channel from Example 4 has a trapezoidal shape with a
 # slope of m (see below).
@@ -87,7 +87,7 @@ m <- 1 / 0.8390996
 critical_y <- Manningtrap_critical(Q = 250, b = 100, m = m, Sf = 0.001, n = n4, units = "Eng",
 type = "symmetrical", critical = "accurate", output = "data.table")
 
-## ---- warning = FALSE, message = FALSE, tidy = TRUE---------------------------
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 # Given "dense grass", the table has "Dense grasses"
 

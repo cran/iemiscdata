@@ -1,4 +1,4 @@
-## ---- warning = FALSE, message = FALSE, tidy = TRUE, out.width = "100%", out.height = "100%"----
+## ----warning = FALSE, message = FALSE, tidy = TRUE, out.width = "100%", out.height = "100%"----
 install.load::load_package("iemiscdata", "USA.state.boundaries", "data.table", "ggplot2", "sf")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
 

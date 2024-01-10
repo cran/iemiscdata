@@ -7,10 +7,10 @@
 \format{
 A data.table data frame with 14 rows and 4 variables:
 \describe{
-item{Topography and Vegetation}{Site topography}
-item{Open Sandy Loam -  Runoff Coefficient C}{C value for sandy loam soil}
-item{Clay and Silt Loam -  Runoff Coefficient C}{C value for clay and silt loam soil}
-item{Tight Clay – Runoff Coefficient C}{C value for tight clay soil}
+\item{Topography and Vegetation}{Site topography}
+\item{Open Sandy Loam -  Runoff Coefficient C}{C value for sandy loam soil}
+\item{Clay and Silt Loam -  Runoff Coefficient C}{C value for clay and silt loam soil}
+\item{Tight Clay – Runoff Coefficient C}{C value for tight clay soil}
 }
 }
 \source{

@@ -7,8 +7,8 @@
 \format{
 A data.table data frame with 4 rows and 2 variables:
 \describe{
-item{Definitions}{Definition of the hydrologic soil groups}
-item{Drainage}{Drainage information for the hydrologic soil groups, if any}
+\item{Definitions}{Definition of the hydrologic soil groups}
+\item{Drainage}{Drainage information for the hydrologic soil groups, if any}
 }
 }
 \source{

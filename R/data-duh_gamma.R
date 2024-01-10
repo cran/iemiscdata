@@ -7,13 +7,13 @@
 #'
 #' @format A data.table data frame with 7 rows and 2 variables:
 #' \describe{
-#' item{m}{"gamma equation shape factor"}
-#' item{PRF}{"peak rate factor (PRF)"}
+#' \item{m}{"gamma equation shape factor"}
+#' \item{PRF}{"peak rate factor (PRF)"}
 #' }
 #'
 #'
 #' @source
-#' United States Department of Agriculture (USDA) Natural Resources Conservation Service (NRCS), |emph{National Engineering Handbook}, "Part 630 Hydrology Chapter 16 Hydrographs", Pages 16-4, 16-9, 16-15, \url{https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=17755.wba}
+#' United States Department of Agriculture (USDA) Natural Resources Conservation Service (NRCS), \emph{National Engineering Handbook}, "Part 630 Hydrology Chapter 16 Hydrographs", Pages 16-4, 16-9, 16-15, \url{https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=17755.wba}
 #'
 #'
 #'

@@ -7,19 +7,19 @@
 \format{
 A data.table data frame with 2,963 rows and 13 variables:
 \describe{
-item{Analyte ID}{Identification for the analyte}
-item{Analyte Name}{Analyte name}
-item{Result Amount}{Amount of the analyte}
-item{Result Unit}{Unit of measurement for the amount}
-item{Collect End}{End date for the collection}
-item{Result Date}{Date of the results}
-item{Mat Desc}{Description of the material}
-item{Samp Size}{Sample size}
-item{Samp Unit}{Unit of measurement for the sample}
-item{Location 1 (City)}{Location 1 city name}
-item{Location 1 (State)}{Location 1 State/Commonwealth name}
-item{Location 1 (Latitude)}{Location 1 latitude}
-item{Location 1 (Longitude)}{Location 1 longitude}
+\item{Analyte ID}{Identification for the analyte}
+\item{Analyte Name}{Analyte name}
+\item{Result Amount}{Amount of the analyte}
+\item{Result Unit}{Unit of measurement for the amount}
+\item{Collect End}{End date for the collection}
+\item{Result Date}{Date of the results}
+\item{Mat Desc}{Description of the material}
+\item{Samp Size}{Sample size}
+\item{Samp Unit}{Unit of measurement for the sample}
+\item{Location 1 (City)}{Location 1 city name}
+\item{Location 1 (State)}{Location 1 State/Commonwealth name}
+\item{Location 1 (Latitude)}{Location 1 latitude}
+\item{Location 1 (Longitude)}{Location 1 longitude}
 }
 }
 \source{
