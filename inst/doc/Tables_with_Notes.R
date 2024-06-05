@@ -62,7 +62,7 @@ data(hsg_definitions)
 
 
 pander(hsg)
-pander(hsg_notes)
+pander(hsg_definitions)
 
 
 ## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
@@ -99,17 +99,15 @@ pander(nsheetflow)
 pander(nsheetflow_notes)
 
 
-
 ## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
-
+data(greenhouse_gases_cloudy_wikipedia)
 data(greenhouse_gases_cloudy_notes_wikipedia)
-data(greenhouse_gases_cloudy_notes_wikipedia_notes)
 # load the data from iemiscdata [containingGreenhouse Gases -- Percent Contribution to Total Greenhouse Effect & notes (Wikipedia)]
 
 
 
+pander(greenhouse_gases_cloudy_wikipedia)
 pander(greenhouse_gases_cloudy_notes_wikipedia)
-pander(greenhouse_gases_cloudy_notes_wikipedia_notes)
 
 

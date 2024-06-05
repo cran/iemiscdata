@@ -19,7 +19,7 @@ vignette: >
 
 # Available Chemical Information
 
-The following provides chemical information from either the chem_wiki or atsdr_tsca_ld50_a data sets from the `chem.databases` R package created by the author for matching chemical substances in the commodities list from the United States Environmental Protection Agency (US EPA) East Palestine, Ohio Norfolk Southern Train 32N Cargo List. The cargo list is one of the data sets in this `iemiscdata` R package also created by the author.
+The following provides chemical information from either the chem_wiki or atsdr_tsca_ld50_a data sets from the `chem.databases` R package created by the author for matching chemical substances in the commodities list from the United States Environmental Protection Agency (US EPA) East Palestine, Ohio Norfolk Southern Train 32N Cargo List. The cargo list is one of the data sets in this `iemiscdata` R package also created by the author.  
 
 \medskip
 
@@ -27,6 +27,10 @@ The following provides chemical information from either the chem_wiki or atsdr_t
 
 install.load::load_package("iemiscdata", "chem.databases", "data.table", "mgsub", "stringi", "pander")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+# set the pander options
+panderOptions("missing", "")
+
 
 data(norfolk_southern_epoh)
 # from iemiscdata package
@@ -130,9 +134,9 @@ pander(train_commodities2)
 # EcoC²S Links
 
 EcoC²S Home -- https://www.ecoccs.com/  
-About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+About EcoC²S -- https://www.ecoccs.com/about-ecoc2s.html  
 Services -- https://www.ecoccs.com/services.html  
-1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+1 Stop Shop -- https://www.ecoccs.com/other-biz.html  
 Products -- https://www.questionuniverse.com/products.html  
 Media -- https://www.ecoccs.com/media.html  
 Resources -- https://www.ecoccs.com/resources.html  
@@ -145,6 +149,6 @@ R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://
 
 All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International license. All other written content retains the copyright of the original author(s).  
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  

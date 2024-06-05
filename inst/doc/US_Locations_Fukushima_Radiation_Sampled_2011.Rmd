@@ -32,7 +32,8 @@ data(state_boundaries_wgs84)
 
 
 # remove the missing rows with location information missing
-raddata_US_Fukushima_2011 <- raddata_US_Fukushima_2011[-which(is.na(raddata_US_Fukushima_2011$"Location 1 (Longitude)") | is.na(raddata_US_Fukushima_2011$"Location 1 (Latitude)")), ]
+raddata_US_Fukushima_2011 <-
+raddata_US_Fukushima_2011[-which(is.na(raddata_US_Fukushima_2011$"Location 1 (Longitude)") | is.na(raddata_US_Fukushima_2011$"Location 1 (Latitude)")), ]
 
 
 
@@ -42,7 +43,8 @@ raddata_US_Fukushima_2011 <- raddata_US_Fukushima_2011[-which(is.na(raddata_US_F
 USA <- state_boundaries_wgs84
 # create the USA object with the same data as state_boundaries_wgs84
 
-USA_projected <- st_transform(USA, "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23 +lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0")
+USA_projected <- st_transform(USA, "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23
++lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0")
 # transform the coordinates to match those of the USA_state_boundaries_map data from USA.state.boundaries.data (formerly in USA.state.boundaries)
 
 
@@ -70,9 +72,9 @@ How to map data with R: A hands-on tutorial to get you to start creating maps wi
 # EcoC²S Links
 
 EcoC²S Home -- https://www.ecoccs.com/  
-About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+About EcoC²S -- https://www.ecoccs.com/about-ecoc2s.html  
 Services -- https://www.ecoccs.com/services.html  
-1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+1 Stop Shop -- https://www.ecoccs.com/other-biz.html  
 Products -- https://www.questionuniverse.com/products.html  
 Media -- https://www.ecoccs.com/media.html  
 Resources -- https://www.ecoccs.com/resources.html  
@@ -85,6 +87,6 @@ R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://
 
 All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International license. All other written content retains the copyright of the original author(s).  
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  

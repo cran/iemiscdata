@@ -5,7 +5,7 @@
 \alias{exceptional_tn_waters}
 \title{Known Exceptional Tennessee Waters and Outstanding National Resource Waters}
 \format{
-A data.table data frame with 3,101 rows and 12 variables:
+A data.table data frame with 2,994 rows and 12 variables:
 \describe{
 \item{HUC}{HUC number}
 \item{Watershed Name}{Name of the watershed}
@@ -22,7 +22,7 @@ A data.table data frame with 3,101 rows and 12 variables:
 }
 }
 \source{
-Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 19 September 2023, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. \url{https://archive.vn/FxfqY}. Used the archive.today webpage capture for this URL for CRAN acceptance.
+Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 8 May 2024, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. \url{https://archive.fo/cCgd8}. Used the archive.today webpage capture for this URL for CRAN acceptance.
 }
 \usage{
 exceptional_tn_waters

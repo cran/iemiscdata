@@ -113,7 +113,7 @@ data(hsg_definitions)
 
 
 pander(hsg)
-pander(hsg_notes)
+pander(hsg_definitions)
 
 ```
 
@@ -167,7 +167,6 @@ data(nsheetflow_notes)
 pander(nsheetflow)
 pander(nsheetflow_notes)
 
-
 ```
 
 \bigskip
@@ -177,15 +176,14 @@ pander(nsheetflow_notes)
 
 ```{r, warning = FALSE, message = FALSE, tidy = TRUE}
 
-
+data(greenhouse_gases_cloudy_wikipedia)
 data(greenhouse_gases_cloudy_notes_wikipedia)
-data(greenhouse_gases_cloudy_notes_wikipedia_notes)
 # load the data from iemiscdata [containingGreenhouse Gases -- Percent Contribution to Total Greenhouse Effect & notes (Wikipedia)]
 
 
 
+pander(greenhouse_gases_cloudy_wikipedia)
 pander(greenhouse_gases_cloudy_notes_wikipedia)
-pander(greenhouse_gases_cloudy_notes_wikipedia_notes)
 
 ```
 
@@ -196,13 +194,13 @@ pander(greenhouse_gases_cloudy_notes_wikipedia_notes)
 
 # Data Sources
 
-United States Department of Agriculture Natural Resources Conservation Service Conservation Engineering Division, "Urban Hydrology for Small Watersheds Technical Release 55 (TR-55)", June 1986, pages 2-3, 2-5 - 2-8, 3-3, 4-1 - 4-2, A-1, https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=22162.wba
+United States Department of Agriculture Natural Resources Conservation Service Conservation Engineering Division, "Urban Hydrology for Small Watersheds Technical Release 55 (TR-55)", June 1986, pages 2-3, 2-5 - 2-8, 3-3, 4-1 - 4-2, A-1, https://web.archive.org/web/20230810204711/https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=22162.wba [Recovered with the Internet Archive: Wayback Machine]  
 
-United States (US) Environmental Protection Agency (EPA): "National Primary Drinking Water Regulations", https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations.
+United States (US) Environmental Protection Agency (EPA): "National Primary Drinking Water Regulations", https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations.  
 
-United States (US) Environmental Protection Agency (EPA): "Secondary Drinking Water Standards: Guidance for Nuisance Chemicals", https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals.
+United States (US) Environmental Protection Agency (EPA): "Secondary Drinking Water Standards: Guidance for Nuisance Chemicals", https://www.epa.gov/sdwa/secondary-drinking-water-standards-guidance-nuisance-chemicals.  
 
-Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, "Greenhouse gas", https://en.wikipedia.org/wiki/Greenhouse_gas.
+Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, "Greenhouse gas", https://en.wikipedia.org/wiki/Greenhouse_gas.  
 
 \bigskip
 \bigskip
@@ -210,9 +208,9 @@ Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, "Greenhouse gas", https://
 # EcoC²S Links
 
 EcoC²S Home -- https://www.ecoccs.com/  
-About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+About EcoC²S -- https://www.ecoccs.com/about-ecoc2s.html  
 Services -- https://www.ecoccs.com/services.html  
-1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+1 Stop Shop -- https://www.ecoccs.com/other-biz.html  
 Products -- https://www.questionuniverse.com/products.html  
 Media -- https://www.ecoccs.com/media.html  
 Resources -- https://www.ecoccs.com/resources.html  
@@ -225,6 +223,6 @@ R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://
 
 All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International license. All other written content retains the copyright of the original author(s).  
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  

@@ -1,5 +1,5 @@
 bibentry(bibtype = "Misc",
 title = "Irucka Embry's miscellaneous data collection",
 author = c(person("Irucka", c("Embry", "E.I.T."))),
-year = "2016-2023", url = "https://gitlab.com/iembry/iemiscdata"
+year = "2016-2024", url = "https://gitlab.com/iembry/iemiscdata"
 )

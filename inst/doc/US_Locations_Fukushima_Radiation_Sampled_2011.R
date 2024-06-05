@@ -11,7 +11,8 @@ data(state_boundaries_wgs84)
 
 
 # remove the missing rows with location information missing
-raddata_US_Fukushima_2011 <- raddata_US_Fukushima_2011[-which(is.na(raddata_US_Fukushima_2011$"Location 1 (Longitude)") | is.na(raddata_US_Fukushima_2011$"Location 1 (Latitude)")), ]
+raddata_US_Fukushima_2011 <-
+raddata_US_Fukushima_2011[-which(is.na(raddata_US_Fukushima_2011$"Location 1 (Longitude)") | is.na(raddata_US_Fukushima_2011$"Location 1 (Latitude)")), ]
 
 
 
@@ -21,7 +22,8 @@ raddata_US_Fukushima_2011 <- raddata_US_Fukushima_2011[-which(is.na(raddata_US_F
 USA <- state_boundaries_wgs84
 # create the USA object with the same data as state_boundaries_wgs84
 
-USA_projected <- st_transform(USA, "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23 +lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0")
+USA_projected <- st_transform(USA, "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23
++lon_0=-96 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0")
 # transform the coordinates to match those of the USA_state_boundaries_map data from USA.state.boundaries.data (formerly in USA.state.boundaries)
 
 

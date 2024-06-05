@@ -3,6 +3,9 @@
 R data package that contains Irucka Embry&#8217;s miscellaneous data sets:  
 
 * Chemistry
+    + 27 Human Cell Salts,
+    + Total Number of Atoms of Elements From the 27 Human Cell Salts Table,
+    + Table of Plant Nutrients,
     + Periodic Table of the Elements,
     + Gaseous Compounds and Elements,
     + Water Vapor Pressure;
@@ -56,7 +59,7 @@ utils::browseVignettes("iemiscdata")
 
 # Package Contents
 
-This package currently contains 93 data sets:  
+This package currently contains 96 data sets:  
 
 * `nchannel`: Manning's n for Channels (Chow, 1959)
 * `npartfull`: Manning's n for Closed Conduits Flowing Partly Full (Chow, 1959)
@@ -89,6 +92,9 @@ This package currently contains 93 data sets:
     * `i1_50`: 1 1/2 Percent Effective Interest Table (Engineering Economy)
 * `pres_elect`: USA Presidential Elections Results (Wikipedia)
 * `Fp`: Table 4-2: Adjustment factor (Fp) for pond and swamp areas that are spread throughout the watershed
+* `plant_essentials`: Table of Plant Nutrients
+* `cell_salts`: 27 Human Cell Salts Table
+* `cell_salts_atoms_final`: Total Number of Atoms of Elements From the 27 Human Cell Salts Table
 * `Fukushima_2011_FieldMeasurements_5_Metadata`: US DOE/NNSA and DoD Response to 2011 Fukushima Incident: Field Team Radiological Measurements Metadata
 * `Fukushima_2011_FieldMeasurements_5`: US DOE/NNSA and DoD Response to 2011 Fukushima Incident: Field Team Radiological Measurements
 * `Fukushima_2011_FieldSampleAirResults_2_Metadata`: US DOE/NNSA and DoD Response to 2011 Fukushima Incident: Radiological Air Samples Metadata

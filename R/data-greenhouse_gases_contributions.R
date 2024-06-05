@@ -13,7 +13,7 @@
 #'
 #'
 #' @source
-#' NASA Goddard Space Flight Center: EOS Project Science Office: Earth Observatory. Jun 16, 2011, "Effects of Changing the Carbon Cycle", \url{https://earthobservatory.nasa.gov/features/CarbonCycle/page5.php}.
+#' NASA Goddard Space Flight Center: EOS Project Science Office: Earth Observatory. Jun 16, 2011, "Effects of Changing the Carbon Cycle", \url{https://web.archive.org/web/20240328160004/https://earthobservatory.nasa.gov/features/CarbonCycle/page5.php}.  [Recovered with the Internet Archive: Wayback Machine]
 #'
 #'
 #'

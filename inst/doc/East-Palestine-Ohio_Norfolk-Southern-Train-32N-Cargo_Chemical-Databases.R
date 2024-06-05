@@ -3,6 +3,10 @@
 install.load::load_package("iemiscdata", "chem.databases", "data.table", "mgsub", "stringi", "pander")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
 
+# set the pander options
+panderOptions("missing", "")
+
+
 data(norfolk_southern_epoh)
 # from iemiscdata package
 

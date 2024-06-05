@@ -17,56 +17,39 @@ vignette: >
 
 \bigskip
 
+## Install the packages
+
+Note: If you would like to view the PDFs, you will need to copy and paste the following command in R first to make sure you have all the packages and their dependencies installed:  
+
+```{r eval = FALSE, tidy = TRUE}
+install.packages(c("iemiscdata", "xopen"))
+# install the packages and their dependencies (including any system dependencies)
+```
+
+\bigskip
+\bigskip
+
+## Load the packages
+
+Note: If you would like to view the PDFs, you will need to copy and paste the following commands in R first to make sure you have all the packages loaded:  
+
+```{r eval = FALSE, tidy = TRUE}
+# load the required packages
+install.load::load_package("iemiscdata", "xopen")
+# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+```
+
+\bigskip
+\bigskip
+
 # View PDF version of the tables
 
-If you would like to view the PDF tables, then use the code below that matches your operating system:  
-
-\bigskip
-\bigskip
-
-# under Unix-based operating systems
-
-Source: [Show me the pdf already | R-bloggers By Will](https://www.r-bloggers.com/2013/02/show-me-the-pdf-already/)  
-
-\medskip
-
-```{r eval = FALSE}
-pdf <- getOption("pdfviewer", default = "")
-
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
-
-system2(pdf, args = f)
-```
-
-\bigskip
-\bigskip
-
-# under MS Windows operating systems
-
-Source: [Show me the pdf already | R-bloggers By Will](https://www.r-bloggers.com/2013/02/show-me-the-pdf-already/)  
-
-\medskip
-
-```{r eval = FALSE}
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
-
-shell.exec(normalizePath(f))
-```
-
-\bigskip
-\bigskip
-
-# under OS X operating systems
-
-Source: [Opening PDF within R studio using file.show - Stack Overflow](https://stackoverflow.com/questions/33791493/opening-pdf-within-r-studio-using-file-show/33791818)  
-
-\medskip
+If you would like to view the PDF, copy-and-paste the following R code into the R console:  
 
 ```{r eval = FALSE}
 
-f <- system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata")
+xopen(system.file("pdf", "Mannings_n_Values.pdf", package = "iemiscdata"))
 
-system2("open", args = f, wait = FALSE)
 ```
 
 \bigskip
@@ -75,9 +58,9 @@ system2("open", args = f, wait = FALSE)
 # EcoC²S Links
 
 EcoC²S Home -- https://www.ecoccs.com/  
-About EcoC²S -- https://www.ecoccs.com/about_ecoc2s.html  
+About EcoC²S -- https://www.ecoccs.com/about-ecoc2s.html  
 Services -- https://www.ecoccs.com/services.html  
-1 Stop Shop -- https://www.ecoccs.com/other_biz.html  
+1 Stop Shop -- https://www.ecoccs.com/other-biz.html  
 Products -- https://www.questionuniverse.com/products.html  
 Media -- https://www.ecoccs.com/media.html  
 Resources -- https://www.ecoccs.com/resources.html  
@@ -90,6 +73,6 @@ R Trainings and Resources provided by EcoC²S (Irucka Embry, E.I.T.) -- https://
 
 All R code written by Irucka Embry is distributed under the GPL-3 (or later) license, see the [GNU General Public License {GPL} page](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International License. All other written content retains the copyright of the original author(s).  
+All written content originally created by Irucka Embry is copyrighted under the Creative Commons Attribution-ShareAlike 4.0 International license. All other written content retains the copyright of the original author(s).  
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  
