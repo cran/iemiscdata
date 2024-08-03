@@ -12,7 +12,7 @@
 #'
 #'
 #' @source
-#' Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 8 May 2024, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. \url{https://archive.fo/cCgd8}. Used the archive.today webpage capture for this URL for CRAN acceptance.
+#' Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 5 July 2024, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. \url{https://archive.is/iSH0P}. Used the archive.today webpage capture for this URL for CRAN acceptance.
 #'
 #'
 #'

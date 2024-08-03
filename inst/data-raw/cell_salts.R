@@ -389,11 +389,29 @@ universal_subset <- function(data, index, drop = TRUE){
 
 # Human Cell Salts Table (27 of them)
 
-install.load::load_package("data.table", "CHNOSZ", "iemiscdata")
+install.load::load_package("data.table", "CHNOSZ", "iemiscdata", "stringi")
 
 cell_salts <- data.table(CellSalts = c("Calcium fluoride", "Calcium phosphate", "Iron phosphate", "Potassium chloride", "Potassium phosphate", "Potassium sulphate", "Magnesium phosphate", "Sodium chloride", "Sodium phosphate", "Sodium sulphate", "Silica", "Calcium sulphate", "Potassium arsenite", "Potassium bromide", "Potassium iodide", "Lithium chloride", "Manganese sulfate", "Calcium sulfide", "Copper arsenite", "Alum", "Zinc chloride", "Calcium carbonate", "Sodium bicarbonate", "Arsenic iodide", "Aurum chloride sodium", "Selenium", "Potassium dichromate"), chemical_formula = c("CaF2", "Ca3(PO4)2", "FePO4", "KCl", "K3PO4", "K2SO4", "Mg3(PO4)2", "NaCl", "Na3PO4", "Na2SO4", "SiO2", "CaSO4", "KAsO2", "KBr", "KI", "LiCl", "MnSO4", "CaS", "CuAsHO3", "AlK(SO4)2 • 12H2O", "ZnCl2", "CaCO3", "NaHCO3", "AsI3", "AuCl4Na", "Se", "K2Cr2O7"))
 
 setnames(cell_salts, c("Cell Salt", "Molecular Formula"))
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(cell_salts, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(cell_salts)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(cell_salts[[col]]))
+
+set(cell_salts, i = idx1, j = col, value = stri_escape_unicode(cell_salts[[col]][idx1]))
+}
+# Source 2 end
+}
+
 
 save(cell_salts, file = "./data/cell_salts.rda")
 
@@ -470,3 +488,17 @@ save(plant_essentials, file = "./data/plant_essentials.rda")
 
 # https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/Book%3A_General_Biology_(Boundless)/31%3A_Soil_and_Plant_Nutrition/31.01%3A_Nutritional_Requirements_of_Plants/31.1C%3A_Essential_Nutrients_for_Plants  
 #Biology LibreTexts: General Biology (Boundless): 31.1C: Essential Nutrients for Plants  
+
+
+
+
+
+
+# Sources
+
+# Source 1
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 2
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.

@@ -35,7 +35,7 @@ save(c_urban, file = "./data/c_urban.rda")
 
 # Table 2: Values of Runoff Coefficient C in Agricultural Areas
 
-library(data.table)
+install.load::load_package("data.table", "stringi")
 
 # read in the csv
 c_agricultural <- fread("./inst/extdata/c_agricultural.csv")
@@ -47,6 +47,19 @@ change_class <- c("Open Sandy Loam -  Runoff Coefficient C", "Clay and Silt Loam
 for (col in change_class)
 
 set(c_agricultural, j = col, value = as.numeric(c_agricultural[[col]]))
+
+
+
+# check for & replace non-ASCII strings
+
+if(any(stri_enc_isascii(names(c_agricultural)) == FALSE)) { # Source 1
+
+gascolnames <- names(c_agricultural)
+
+setnames(c_agricultural, stri_escape_unicode(gascolnames))
+
+}
+
 
 
 # save the data

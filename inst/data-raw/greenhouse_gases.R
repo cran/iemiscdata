@@ -23,6 +23,25 @@ set(greenhouse_gas1, j = col, value = stri_trim_both(greenhouse_gas1[[col]], pat
 
 
 
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(greenhouse_gas1, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(greenhouse_gas1)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(greenhouse_gas1[[col]]))
+
+set(greenhouse_gas1, i = idx1, j = col, value = stri_escape_unicode(greenhouse_gas1[[col]][idx1]))
+}
+# Source 2 end
+}
+
+
+
+
 greenhouse_gas1_use <- copy(greenhouse_gas1)
 
 greenhouse_gas1_use[, c("Individual contribution", "Combined with overlap effects") := NULL]
@@ -98,11 +117,24 @@ save(greenhouse_gases_contributions, file = "./data/greenhouse_gases_contributio
 # Recovered with the Internet Archive: Wayback Machine
 
 # Reference 2
-# https://earthobservatory.nasa.gov/features/CarbonCycle/page5.php | Effects of Changing the Carbon Cycle, Published Jun 16, 2011, The Earth Observatory is part of the EOS Project Science Office at NASA Goddard Space Flight Center
+# https://web.archive.org/web/20240328160004/https://earthobservatory.nasa.gov/features/CarbonCycle/page5.php | Effects of Changing the Carbon Cycle, Published Jun 16, 2011, The Earth Observatory is part of the EOS Project Science Office at NASA Goddard Space Flight Center
 # saved as TheCarbonCycle.html in inst/extdata
+# [Recovered with the Internet Archive: Wayback Machine]
 
 # Because scientists know which wavelengths of energy each greenhouse gas absorbs, and the concentration of the gases in the atmosphere, they can calculate how much each gas contributes to warming the planet. Carbon dioxide causes about 20 percent of Earth's greenhouse effect; water vapor accounts for about 50 percent; and clouds account for 25 percent. The rest is caused by small particles (aerosols) and minor greenhouse gases like methane.
 
 # Reference 3
 # Wikimedia Foundation, Inc. Wikipedia, 25 August 2023, Greenhouse gas. https://en.wikipedia.org/wiki/Greenhouse_gas
 # saved as Greenhouse_gas.html in inst/extdata
+
+
+
+
+# Sources
+
+# Source 1
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 2
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.

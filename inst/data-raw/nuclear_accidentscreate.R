@@ -1,8 +1,26 @@
 ﻿## Nuclear & Radiation Accidents and incidents (The Guardian)
 
-library(data.table)
+install.load::load_package("data.table", "stringi")
 
 nuclear_accidents_ranked <- fread("./inst/extdata/Nuclear_accidents-and_how_theyre_ranked-Rankings.csv")
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(nuclear_accidents_ranked, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(nuclear_accidents_ranked)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(nuclear_accidents_ranked[[col]]))
+
+set(nuclear_accidents_ranked, i = idx1, j = col, value = stri_escape_unicode(nuclear_accidents_ranked[[col]][idx1]))
+}
+# Source 3 end
+}
+
 
 save(nuclear_accidents_ranked, file = "./data/nuclear_accidents_ranked.rda")
 
@@ -10,6 +28,24 @@ save(nuclear_accidents_ranked, file = "./data/nuclear_accidents_ranked.rda")
 
 
 nuclear_accidents <- fread("./inst/extdata/Nuclear_accidents-and_how_theyre_ranked-Accidents.csv")
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(nuclear_accidents, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(nuclear_accidents)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(nuclear_accidents[[col]]))
+
+set(nuclear_accidents, i = idx1, j = col, value = stri_escape_unicode(nuclear_accidents[[col]][idx1]))
+}
+# Source 3 end
+}
+
 
 # change the column names
 setnames(nuclear_accidents, c("Year", "INES level"), c("Date", "INES rating"))
@@ -85,6 +121,23 @@ set(nuclear_accidents_wiki, j = col, value = anydate(nuclear_accidents_wiki[[col
 setnames(nuclear_accidents_wiki, c("Location of accident", "Description of accident or incident", "Numbers of deaths", "Cost($USmillions2006)", "INES  level[32]"), c("Location", "Description", "Fatalities", "Cost (in millions 2006 US$)", "INES rating"))
 
 
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(nuclear_accidents_wiki, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(nuclear_accidents_wiki)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(nuclear_accidents_wiki[[col]]))
+
+set(nuclear_accidents_wiki, i = idx1, j = col, value = stri_escape_unicode(nuclear_accidents_wiki[[col]][idx1]))
+}
+# Source 3 end
+}
+
+
 save(nuclear_accidents_wiki, file = "./data/nuclear_accidents_wiki.rda")
 
 # Data source
@@ -119,6 +172,23 @@ change_class3 <- "Date"
 for (col in change_class3)
 
 set(military_nuclear_accidents_wiki, j = col, value = anydate(military_nuclear_accidents_wiki[[col]]))
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(military_nuclear_accidents_wiki, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(military_nuclear_accidents_wiki)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(military_nuclear_accidents_wiki[[col]]))
+
+set(military_nuclear_accidents_wiki, i = idx1, j = col, value = stri_escape_unicode(military_nuclear_accidents_wiki[[col]][idx1]))
+}
+# Source 3 end
+}
 
 
 save(military_nuclear_accidents_wiki, file = "./data/military_nuclear_accidents_wiki.rda")
@@ -158,6 +228,26 @@ for (col in change_class4)
 
 set(civilian_nuclear_accidents_wiki, j = col, value = anydate(civilian_nuclear_accidents_wiki[[col]]))
 
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(civilian_nuclear_accidents_wiki, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(civilian_nuclear_accidents_wiki)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(civilian_nuclear_accidents_wiki[[col]]))
+
+set(civilian_nuclear_accidents_wiki, i = idx1, j = col, value = stri_escape_unicode(civilian_nuclear_accidents_wiki[[col]][idx1]))
+}
+# Source 3 end
+}
+
+
+
 save(civilian_nuclear_accidents_wiki, file = "./data/civilian_nuclear_accidents_wiki.rda")
 
 
@@ -174,7 +264,7 @@ install.load::load_package("rvest", "data.table")
 
 # the Source URL
 url5 <- "https://en.wikipedia.org/wiki/List_of_nuclear_power_accidents_by_country"
-# Downloaded version is current as of 1 September 2023
+# Downloaded version is current as of 24 June 2024
 
 # Source 1 begin
 nuclear_power_accidents_country_wiki <- read_html(url5)
@@ -213,7 +303,7 @@ nuclear_power_accidents_country_wiki9[, Country := rep("South Korea", nrow(nucle
 nuclear_power_accidents_country_wiki10[, Country := rep("Serbia", nrow(nuclear_power_accidents_country_wiki10))]
 nuclear_power_accidents_country_wiki11[, Country := rep("Switzerland", nrow(nuclear_power_accidents_country_wiki11))]
 nuclear_power_accidents_country_wiki12[, Country := rep("Sweden", nrow(nuclear_power_accidents_country_wiki12))]
-nuclear_power_accidents_country_wiki13[, Country := rep("Switzerland", nrow(nuclear_power_accidents_country_wiki13))]
+nuclear_power_accidents_country_wiki13[, Country := rep("Taiwan", nrow(nuclear_power_accidents_country_wiki13))]
 nuclear_power_accidents_country_wiki14[, Country := rep("Ukraine", nrow(nuclear_power_accidents_country_wiki14))]
 nuclear_power_accidents_country_wiki15[, Country := rep("United Kingdom", nrow(nuclear_power_accidents_country_wiki15))]
 nuclear_power_accidents_country_wiki16[, Country := rep("United States", nrow(nuclear_power_accidents_country_wiki16))]
@@ -232,7 +322,7 @@ setnames(nuclear_power_accidents_country_wiki9, "Cost  (in millions  2006 US$)",
 setnames(nuclear_power_accidents_country_wiki10, "INES", "INES rating")
 setnames(nuclear_power_accidents_country_wiki11, "INES", "INES rating")
 setnames(nuclear_power_accidents_country_wiki12, "INES", "INES rating")
-setnames(nuclear_power_accidents_country_wiki13, c("Cost 130,000,000 Million Dollars", "INES"), c("Cost 130,000,000 million dollars", "INES rating"))
+setnames(nuclear_power_accidents_country_wiki13, "INES", "INES rating")
 setnames(nuclear_power_accidents_country_wiki14, c("Cost  (in millions  2006 US$)", "INES"), c("Cost (in millions 2006 US$)", "INES rating"))
 setnames(nuclear_power_accidents_country_wiki15, "Cost(in millions2006 US$)", "Cost (in millions 2006 US$)")
 setnames(nuclear_power_accidents_country_wiki16, c("Cost  (in millions  2006 US$)", "INES"), c("Cost (in millions 2006 US$)", "INES rating"))
@@ -245,10 +335,29 @@ nuclear_power_accidents_country_wiki <- rbindlist(nuclear_power_accidents_countr
 
 
 # change the column order  
-setcolorder(nuclear_power_accidents_country_wiki, c("Date", "Country", "Location", "Description", "INES rating", "Fatalities", "Fatalities 180", "Victims", "Cost (in millions 2006 US$)", "Cost 130,000,000 million dollars", "Cost"))
+setcolorder(nuclear_power_accidents_country_wiki, c("Date", "Country", "Location", "Description", "INES rating", "Fatalities", "Victims", "Cost (in millions 2006 US$)", "Cost"))
 
 # set the key to Country so that the separate Switzerland rows will be in the same Country section
 setkey(nuclear_power_accidents_country_wiki, Country)
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(nuclear_power_accidents_country_wiki, stri_enc_isascii)) == FALSE)) { # Source 2
+
+check_ascii <- names(nuclear_power_accidents_country_wiki)
+
+# Source 3 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(nuclear_power_accidents_country_wiki[[col]]))
+
+set(nuclear_power_accidents_country_wiki, i = idx1, j = col, value = stri_escape_unicode(nuclear_power_accidents_country_wiki[[col]][idx1]))
+}
+# Source 3 end
+}
+
+
 
 save(nuclear_power_accidents_country_wiki, file = "./data/nuclear_power_accidents_country_wiki.rda")
 
@@ -262,7 +371,14 @@ save(nuclear_power_accidents_country_wiki, file = "./data/nuclear_power_accident
 
 
 
-
+# Sources
 
 # Source 1
 # Wikipedia Data Scraping with R: rvest in Action: Scraping list of people on bank notes for exploratory data analysis using rvest functions By Korkrid Kyle Akepanidtaworn, Jul 21, 2018. https://medium.com/@kyleake/wikipedia-data-scraping-with-r-rvest-in-action-3c419db9af2d
+
+# Source 2
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 3
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.

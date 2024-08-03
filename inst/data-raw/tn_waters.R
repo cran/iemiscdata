@@ -1,6 +1,6 @@
 # Exceptional Tennessee Waters
 
-install.load::load_package("data.table", "anytime", "sjmisc", "assertthat", "openxlsx2")
+install.load::load_package("data.table", "anytime", "sjmisc", "assertthat", "openxlsx2", "stringi")
 
 # read in the CSV file
 exceptional_tn_waters <- fread("./inst/extdata/exceptional_tn_waters.csv", colClasses = "character")
@@ -20,6 +20,23 @@ change_class2 <- c("Inclusion Date", "Revision Date")
 
 for (col in change_class2)
 set(exceptional_tn_waters, j = col, value = anydate(exceptional_tn_waters[[col]]))
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(exceptional_tn_waters, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(exceptional_tn_waters)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(exceptional_tn_waters[[col]]))
+
+set(exceptional_tn_waters, i = idx1, j = col, value = stri_escape_unicode(exceptional_tn_waters[[col]][idx1]))
+}
+# Source 2 end
+}
 
 
 # check for wrong values for Latitude or Longitude
@@ -99,4 +116,14 @@ save(exceptional_tn_waters_abbrv, file = "./data/exceptional_tn_waters_abbrv.rda
 
 
 # Data source
-# Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 27 May 2024, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. https://dataviewers.tdec.tn.gov/dataviewers/f?p=2005:34304:6953810990808:::::
+# Tennessee Department of Environment and Conservation (TDEC) Division of Water Resources (DWR), Accessed 5 July 2024, The Known Exceptional Tennessee Waters and Outstanding National Resource Waters. https://dataviewers.tdec.tn.gov/dataviewers/f?p=2005:34304:8532810000898:::::
+
+
+# Sources
+
+# Source 1
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 2
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.

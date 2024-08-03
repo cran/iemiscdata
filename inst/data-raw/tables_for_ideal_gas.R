@@ -130,6 +130,24 @@ set(elements_wiki, j = col, value = stri_trans_totitle(elements_wiki[[col]]))
 }
 
 
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(elements_wiki, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(elements_wiki)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(elements_wiki[[col]]))
+
+set(elements_wiki, i = idx1, j = col, value = stri_escape_unicode(elements_wiki[[col]][idx1]))
+}
+# Source 2 end
+}
+
+
 save(elements_wiki, file = "./data/elements_wiki.rda")
 
 
@@ -283,6 +301,34 @@ set(gases, j = col, value = as.numeric(gases[[col]]))
 
 # change CAS No to CAS
 setnames(gases, "CAS No", "CAS")
+
+
+
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(gases, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(gases)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(gases[[col]]))
+
+set(gases, i = idx1, j = col, value = stri_escape_unicode(gases[[col]][idx1]))
+}
+# Source 2 end
+}
+
+
+if(any(stri_enc_isascii(names(gases)) == FALSE)) { # Source 1
+
+gascolnames <- names(gases)
+
+setnames(gases, stri_escape_unicode(gascolnames))
+
+}
+
 
 
 # copy gases to remove the brackets and make a plain table
@@ -537,7 +583,7 @@ is.na(gases_table3$"Formula"), "",
 )
 
 
-gases_table3[, c("Formula", "State", "Mole percent", "Boiling pt (°C)", "Melting pt (°C)") := NULL]
+gases_table3[, c("Formula", "State", "Mole percent", "Boiling pt (\\u00b0C)", "Melting pt (\\u00b0C)") := NULL]
 
 setnames(gases_table3, "i.Formula", "Formula")
 
@@ -565,3 +611,18 @@ save(gases_table, file = "./data/gases_table.rda")
 
 # Data Source 2
 # https://chem.libretexts.org/LibreTexts/Howard_University/General_Chemistry%3A_An_Atoms_First_Approach/Unit_4%3A__Thermochemistry/Chapter_10%3A_Gases/Chapter_10.1%3A_Gaseous_Elements_and_Compounds | Chemistry LibreTexts: Chapter 10.1: Gaseous Elements and Compounds
+
+
+
+
+
+
+
+# Sources
+
+# Source 1
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 2
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.

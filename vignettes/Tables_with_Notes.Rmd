@@ -17,16 +17,34 @@ vignette: >
 
 \bigskip
 
+## Load the packages
+
+Note: If you wish to replicate the R code below, then you will need to copy and paste the following commands in R first to make sure you have all the packages loaded:  
+
+```{r, warning = FALSE, message = FALSE, tidy = TRUE}
+
+install.load::load_package("iemiscdata", "pander", "knitr")
+# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+# set the pander options
+panderOptions("missing", "")
+panderOptions("table.alignment.default", "left")
+panderOptions("table.alignment.rownames", "left")
+panderOptions("table.split.cells", Inf)
+panderOptions("table.split.table", Inf)
+
+```
+
+\bigskip
+\bigskip
+
 # Table 2-1: Runoff depth for selected CN's and rainfall amounts & notes
 
 ```{r, warning = FALSE, message = FALSE, tidy = TRUE}
 
-install.load::load_package("iemiscdata", "pander")
-# load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
-
 data(runoff_depth)
 data(runoff_depth_notes)
-# load the data from iemiscdata (containing 
+# load the data from iemiscdata (containing Table 2-1: Runoff depth for selected CN's and rainfall amounts & notes)
 
 pander(runoff_depth)
 pander(runoff_depth_notes)

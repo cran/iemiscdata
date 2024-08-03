@@ -1,6 +1,6 @@
 Package: iemiscdata
 Title: Irucka Embry's Miscellaneous Data Collection
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: person("Irucka", "Embry", role = c("aut", "cre"), email = "iembry@ecoccs.com")
 Maintainer: Irucka Embry <iembry@ecoccs.com>
 Depends: R (>= 3.5.0)
@@ -8,7 +8,7 @@ Suggests: install.load, rivr, rvest, data.table (>= 1.10.2), ggplot2
         (>= 3.3.4), stringi, qdap, lubridate, knitr, snakecase,
         rmarkdown, USA.state.boundaries (>= 1.0.1), sfheaders, sf,
         dplyr, spelling, pander, units, round, anytime, mgsub,
-        chem.databases, kableExtra, flextable, formatR
+        chem.databases, kableExtra, flextable, formatR, xopen
 Description: Miscellaneous data sets [Chemistry, Engineering Economics,
     Environmental/Water Resources Engineering, Nuclear Accidents, US
     Presidential Elections, and US Continental Congress Presidents].
@@ -20,9 +20,9 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
 VignetteBuilder: knitr
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-06-05 05:18:38 UTC; xbyri
+Packaged: 2024-07-24 21:54:15 UTC; xbyri
 Author: Irucka Embry [aut, cre]
 Repository: CRAN
-Date/Publication: 2024-06-05 16:20:06 UTC
+Date/Publication: 2024-08-03 12:00:02 UTC

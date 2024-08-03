@@ -1,4 +1,4 @@
-install.load::load_package("rvest", "data.table", "mgsub", "anytime")
+install.load::load_package("rvest", "data.table", "mgsub", "anytime", "stringi")
 
 # read in the data
 cont_congress <- read_html("./inst/extdata/President_of_the_Continental_Congress.html")
@@ -50,6 +50,24 @@ for (col in change_class)
 set(pres_cont_congress, j = col, value = anydate(pres_cont_congress[[col]]))
 
 
+# check for & replace non-ASCII strings
+
+if(any(unlist(lapply(pres_cont_congress, stri_enc_isascii)) == FALSE)) { # Source 1
+
+check_ascii <- names(pres_cont_congress)
+
+# Source 2 begin
+for (col in check_ascii) {
+
+idx1 <- which(!stri_enc_isascii(pres_cont_congress[[col]]))
+
+set(pres_cont_congress, i = idx1, j = col, value = stri_escape_unicode(pres_cont_congress[[col]][idx1]))
+}
+# Source 2 end
+}
+
+
+
 save(pres_cont_congress, file = "./data/pres_cont_congress.rda")
 
 
@@ -88,3 +106,16 @@ save(pres_cont_congress, file = "./data/pres_cont_congress.rda")
 # Nathaniel Gorham
 # Arthur St. Clair
 # Cyrus Griffin
+
+
+
+
+# Sources
+
+# Source 1
+# https://stackoverflow.com/questions/29043932/how-to-handle-example-data-in-r-package-that-has-utf-8-marked-strings
+# twitter - How to handle example data in R Package that has UTF-8 marked strings - Stack Overflow
+
+# Source 2
+# https://stackoverflow.com/questions/50361168/r-data-table-set-add-number-to-certain-j-values-only | r - data.table set add number to certain j values only - Stack Overflow; answered by chinsoon12 on May 16 2018.
+

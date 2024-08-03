@@ -1,4 +1,12 @@
-# iemiscdata 1.0.2 (4 June 2024)
+# iemiscdata 1.0.3 (25 July 2024)
+
+* Revised the Tables_with_Notes vignette to make the tables more appealing and readable
+* Updated the exceptional_tn_waters and the nuclear_power_accidents_country_wiki data sets
+* Received an e-mail issue from Prof Brian Ripley on 5 July 2024 regarding the package check notes at https://cran.r-project.org/web/checks/check_results_iemiscdata.html. The issues have been resolved.
+* On 19 July, after this package was archived, I saw that there was a new check note at https://cran.r-project.org/web/checks/check_results_iemiscdata.html with regards to a comment issue in the US_Locations_Fukushima_Radiation_Sampled_2011 vignette. Also, I saw a MKL link with a message regarding the same vignette and a "no simple features geometry column present" error message. Those issues have been resolved.
+
+
+# iemiscdata 1.0.2 (5 June 2024)
 
 * Added the 27 Human Cell Salts Table (cell_salts), the Total Number of Atoms of Elements From the 27 Human Cell Salts Table (cell_salts_atoms_final), and the Table of Plant Nutrients (plant_essentials) data sets
 * Updated the exceptional_tn_waters data set

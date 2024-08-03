@@ -1,11 +1,21 @@
 ## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
-install.load::load_package("iemiscdata", "pander")
+install.load::load_package("iemiscdata", "pander", "knitr")
 # load needed packages using the load_package function from the install.load package (it is assumed that you have already installed these packages)
+
+# set the pander options
+panderOptions("missing", "")
+panderOptions("table.alignment.default", "left")
+panderOptions("table.alignment.rownames", "left")
+panderOptions("table.split.cells", Inf)
+panderOptions("table.split.table", Inf)
+
+
+## ----warning = FALSE, message = FALSE, tidy = TRUE----------------------------
 
 data(runoff_depth)
 data(runoff_depth_notes)
-# load the data from iemiscdata (containing 
+# load the data from iemiscdata (containing Table 2-1: Runoff depth for selected CN's and rainfall amounts & notes)
 
 pander(runoff_depth)
 pander(runoff_depth_notes)
